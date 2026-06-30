@@ -1,0 +1,2330 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head><base href="https://d16ilfvy4mv02r.cloudfront.net/workspaces/KHrQzW451a0QeqzEu61Dxjqdl6fapzXe/52d81cdf-d87a-44c4-9d59-987484198fe4/files/">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>StudyFlow — Study Smarter, Not Harder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-light: #3b82f6;
+  --primary-50: #eff6ff;
+  --primary-100: #dbeafe;
+  --accent: #7c3aed;
+  --accent-light: #8b5cf6;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --bg: #ffffff;
+  --bg2: #f8fafc;
+  --bg3: #f1f5f9;
+  --card: #ffffff;
+  --card-border: #e2e8f0;
+  --text: #0f172a;
+  --text2: #334155;
+  --text3: #64748b;
+  --text4: #94a3b8;
+  --sidebar-w: 260px;
+  --header-h: 64px;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow: 0 4px 12px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,.10), 0 4px 16px rgba(0,0,0,.06);
+  --shadow-xl: 0 24px 64px rgba(0,0,0,.12);
+  --glass: rgba(255,255,255,.72);
+  --glass-border: rgba(255,255,255,.5);
+  --transition: all .2s cubic-bezier(.4,0,.2,1);
+}
+[data-theme="dark"] {
+  --bg: #0a0f1a;
+  --bg2: #0f1623;
+  --bg3: #141c2e;
+  --card: #141c2e;
+  --card-border: #1e2d4a;
+  --text: #f0f6ff;
+  --text2: #c7d9f0;
+  --text3: #7a9abf;
+  --text4: #4a6a8a;
+  --glass: rgba(14,22,44,.72);
+  --glass-border: rgba(255,255,255,.08);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.3);
+  --shadow: 0 4px 12px rgba(0,0,0,.4);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,.5);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);transition:background .3s,color .3s;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:'Inter',sans-serif;border:none;outline:none}
+input,textarea,select{font-family:'Inter',sans-serif;outline:none;border:none}
+img{max-width:100%}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--card-border);border-radius:99px}
+
+/* ── UTILITIES ──────────────────────────────────────────── */
+.hidden{display:none!important}
+.flex{display:flex}.iflex{display:inline-flex}
+.flex-col{flex-direction:column}
+.items-center{align-items:center}
+.justify-center{justify-content:center}
+.justify-between{justify-content:space-between}
+.gap-1{gap:4px}.gap-2{gap:8px}.gap-3{gap:12px}.gap-4{gap:16px}.gap-6{gap:24px}.gap-8{gap:32px}
+.w-full{width:100%}.h-full{height:100%}
+.text-center{text-align:center}
+.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-bold{font-weight:700}
+.text-sm{font-size:.875rem}.text-xs{font-size:.75rem}.text-lg{font-size:1.125rem}.text-xl{font-size:1.25rem}.text-2xl{font-size:1.5rem}.text-3xl{font-size:1.875rem}.text-4xl{font-size:2.25rem}.text-5xl{font-size:3rem}
+.text-muted{color:var(--text3)}
+.rounded{border-radius:var(--radius)}.rounded-sm{border-radius:var(--radius-sm)}.rounded-lg{border-radius:var(--radius-lg)}.rounded-full{border-radius:9999px}
+.p-1{padding:4px}.p-2{padding:8px}.p-3{padding:12px}.p-4{padding:16px}.p-6{padding:24px}.p-8{padding:32px}
+.px-3{padding-left:12px;padding-right:12px}.px-4{padding-left:16px;padding-right:16px}.px-6{padding-left:24px;padding-right:24px}
+.py-2{padding-top:8px;padding-bottom:8px}.py-3{padding-top:12px;padding-bottom:12px}.py-4{padding-top:16px;padding-bottom:16px}
+.mt-1{margin-top:4px}.mt-2{margin-top:8px}.mt-3{margin-top:12px}.mt-4{margin-top:16px}.mt-6{margin-top:24px}.mt-8{margin-top:32px}
+.mb-1{margin-bottom:4px}.mb-2{margin-bottom:8px}.mb-3{margin-bottom:12px}.mb-4{margin-bottom:16px}.mb-6{margin-bottom:24px}
+.ml-auto{margin-left:auto}.mr-auto{margin-right:auto}
+.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}
+.relative{position:relative}.absolute{position:absolute}.fixed{position:fixed}
+.top-0{top:0}.right-0{right:0}.bottom-0{bottom:0}.left-0{left:0}
+.z-10{z-index:10}.z-20{z-index:20}.z-50{z-index:50}.z-100{z-index:100}
+.inset-0{inset:0}
+.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.shrink-0{flex-shrink:0}
+.grow{flex-grow:1}
+.opacity-0{opacity:0}.opacity-50{opacity:.5}
+.cursor-pointer{cursor:pointer}
+.select-none{user-select:none}
+.pointer-events-none{pointer-events:none}
+
+/* ── BUTTONS ──────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 20px;border-radius:var(--radius-sm);font-size:.875rem;font-weight:600;transition:var(--transition);white-space:nowrap;position:relative;overflow:hidden}
+.btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,0);transition:background .15s}
+.btn:hover::after{background:rgba(255,255,255,.1)}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 4px 14px rgba(37,99,235,.35)}
+.btn-primary:hover{background:var(--primary-dark);box-shadow:0 6px 20px rgba(37,99,235,.45)}
+.btn-secondary{background:var(--bg3);color:var(--text);border:1px solid var(--card-border)}
+.btn-secondary:hover{background:var(--card-border)}
+.btn-ghost{background:transparent;color:var(--text2)}
+.btn-ghost:hover{background:var(--bg3)}
+.btn-outline{background:transparent;color:var(--primary);border:1.5px solid var(--primary)}
+.btn-outline:hover{background:var(--primary-50)}
+.btn-danger{background:var(--danger);color:#fff}
+.btn-success{background:var(--success);color:#fff}
+.btn-icon{padding:8px;border-radius:var(--radius-sm);aspect-ratio:1}
+.btn-lg{padding:14px 28px;font-size:1rem;border-radius:var(--radius)}
+.btn-sm{padding:6px 14px;font-size:.8125rem}
+.btn-xs{padding:4px 10px;font-size:.75rem;gap:4px}
+.btn-pill{border-radius:99px}
+.btn:disabled{opacity:.5;pointer-events:none}
+
+/* ── CARDS ──────────────────────────────────────────── */
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);transition:var(--transition)}
+.card-hover:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.glass{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-border)}
+
+/* ── INPUTS ──────────────────────────────────────────── */
+.input{width:100%;padding:10px 14px;background:var(--bg3);border:1.5px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:.875rem;transition:var(--transition)}
+.input:focus{border-color:var(--primary);background:var(--card);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+.input::placeholder{color:var(--text4)}
+.input-lg{padding:13px 18px;font-size:1rem;border-radius:var(--radius)}
+.textarea{resize:vertical;min-height:120px}
+.label{display:block;font-size:.8125rem;font-weight:600;color:var(--text2);margin-bottom:6px}
+
+/* ── BADGES ──────────────────────────────────────────── */
+.badge{display:inline-flex;align-items:center;gap:4px;padding:2px 10px;border-radius:99px;font-size:.75rem;font-weight:600}
+.badge-primary{background:var(--primary-100);color:var(--primary-dark)}
+.badge-success{background:#d1fae5;color:#065f46}
+.badge-warning{background:#fef3c7;color:#92400e}
+.badge-danger{background:#fee2e2;color:#991b1b}
+.badge-purple{background:#ede9fe;color:#5b21b6}
+.badge-gray{background:var(--bg3);color:var(--text3)}
+[data-theme="dark"] .badge-primary{background:rgba(37,99,235,.2);color:#60a5fa}
+[data-theme="dark"] .badge-success{background:rgba(16,185,129,.2);color:#6ee7b7}
+[data-theme="dark"] .badge-warning{background:rgba(245,158,11,.2);color:#fcd34d}
+[data-theme="dark"] .badge-danger{background:rgba(239,68,68,.2);color:#fca5a5}
+[data-theme="dark"] .badge-purple{background:rgba(124,58,237,.2);color:#c4b5fd}
+[data-theme="dark"] .badge-gray{background:var(--bg3);color:var(--text3)}
+
+/* ══════════════════════════════════════════════════════════
+   PAGES
+══════════════════════════════════════════════════════════ */
+.page{display:none;min-height:100vh;flex-direction:column}
+.page.active{display:flex}
+
+/* ── LANDING PAGE ──────────────────────────────────────── */
+.landing-nav{position:sticky;top:0;z-index:100;width:100%}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:72px;max-width:1280px;margin:0 auto;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.375rem;font-weight:800;color:var(--text)}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;font-weight:900;flex-shrink:0}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-link{padding:8px 14px;border-radius:var(--radius-sm);font-size:.875rem;font-weight:500;color:var(--text2);transition:var(--transition)}
+.nav-link:hover{color:var(--text);background:var(--bg3)}
+.nav-actions{display:flex;align-items:center;gap:8px}
+
+.hero{padding:100px 32px 80px;text-align:center;position:relative;overflow:hidden;max-width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:var(--primary-50);border:1px solid var(--primary-100);border-radius:99px;font-size:.8125rem;font-weight:600;color:var(--primary);margin-bottom:24px}
+[data-theme="dark"] .hero-badge{background:rgba(37,99,235,.15);border-color:rgba(37,99,235,.3);color:#93c5fd}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.08;letter-spacing:-.03em;margin-bottom:24px;background:linear-gradient(135deg,var(--text) 0%,var(--primary) 60%,var(--accent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:clamp(1rem,2.5vw,1.25rem);color:var(--text3);max-width:600px;margin:0 auto 40px;line-height:1.7}
+.hero-actions{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.hero-visual{margin:64px auto 0;max-width:960px;position:relative}
+.hero-mockup{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-xl);box-shadow:var(--shadow-xl),0 0 0 1px rgba(37,99,235,.05);overflow:hidden}
+.mockup-bar{display:flex;align-items:center;gap:8px;padding:14px 20px;background:var(--bg2);border-bottom:1px solid var(--card-border)}
+.mockup-dot{width:12px;height:12px;border-radius:50%}
+.mockup-url{flex:1;background:var(--bg3);border-radius:6px;padding:5px 12px;font-size:.75rem;color:var(--text3);font-family:'Fira Code',monospace}
+
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1200px;margin:0 auto;padding:80px 32px}
+.feature-card{padding:28px;border-radius:var(--radius-lg);background:var(--card);border:1px solid var(--card-border);transition:var(--transition);position:relative;overflow:hidden}
+.feature-card::before{content:'';position:absolute;inset:-1px;border-radius:inherit;background:linear-gradient(135deg,var(--primary),var(--accent));opacity:0;transition:.2s;z-index:-1}
+.feature-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.feature-card:hover::before{opacity:.08}
+.feature-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:16px;flex-shrink:0}
+.feature-card h3{font-size:1.0625rem;font-weight:700;margin-bottom:8px}
+.feature-card p{font-size:.875rem;color:var(--text3);line-height:1.65}
+
+.section{padding:80px 32px;max-width:1200px;margin:0 auto}
+.section-label{font-size:.8125rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:12px}
+.section-title{font-size:clamp(1.75rem,4vw,2.75rem);font-weight:800;line-height:1.2;letter-spacing:-.02em;margin-bottom:16px}
+.section-sub{font-size:1.0625rem;color:var(--text3);line-height:1.7;max-width:520px}
+
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.testimonial-card{padding:28px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-lg)}
+.testimonial-stars{display:flex;gap:2px;margin-bottom:12px}
+.testimonial-card p{font-size:.9375rem;line-height:1.7;color:var(--text2);margin-bottom:20px}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.875rem;font-weight:700;color:#fff;flex-shrink:0}
+
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:800px;margin:0 auto}
+.pricing-card{padding:32px;background:var(--card);border:1.5px solid var(--card-border);border-radius:var(--radius-lg);position:relative}
+.pricing-card.featured{border-color:var(--primary);background:linear-gradient(135deg,var(--primary-50) 0%,var(--card) 50%)}
+[data-theme="dark"] .pricing-card.featured{background:linear-gradient(135deg,rgba(37,99,235,.12) 0%,var(--card) 50%)}
+.pricing-popular{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;padding:3px 16px;border-radius:99px;font-size:.75rem;font-weight:700}
+.pricing-price{font-size:2.75rem;font-weight:900;letter-spacing:-.03em;margin:16px 0 4px}
+.pricing-period{font-size:.875rem;color:var(--text3)}
+.pricing-features{list-style:none;margin:24px 0;display:flex;flex-direction:column;gap:10px}
+.pricing-features li{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--text2)}
+.pricing-features li::before{content:'✓';color:var(--success);font-weight:700;flex-shrink:0}
+.pricing-features li.no::before{content:'✕';color:var(--text4)}
+.pricing-features li.no{color:var(--text4)}
+
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq-item{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius)}
+.faq-q{padding:20px 24px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:.9375rem;user-select:none}
+.faq-arrow{transition:transform .2s}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{padding:0 24px 0;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s;color:var(--text3);font-size:.9rem;line-height:1.7}
+.faq-item.open .faq-a{padding:0 24px 20px;max-height:300px}
+
+.landing-footer{background:var(--bg2);border-top:1px solid var(--card-border);padding:60px 32px 32px;margin-top:80px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;max-width:1200px;margin:0 auto;padding-bottom:48px;border-bottom:1px solid var(--card-border)}
+.footer-bottom{max-width:1200px;margin:28px auto 0;display:flex;justify-content:space-between;align-items:center;font-size:.8125rem;color:var(--text4)}
+.footer-links{display:flex;flex-direction:column;gap:10px}
+.footer-link{font-size:.875rem;color:var(--text3);transition:.15s}
+.footer-link:hover{color:var(--text)}
+.footer-col h4{font-size:.875rem;font-weight:700;margin-bottom:16px}
+
+.bg-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;pointer-events:none}
+.blob1{width:600px;height:600px;background:var(--primary);top:-200px;right:-100px;opacity:.07}
+.blob2{width:400px;height:400px;background:var(--accent);bottom:-100px;left:-100px;opacity:.06}
+
+/* ── AUTH MODAL ──────────────────────────────────────────── */
+.modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--card);border-radius:var(--radius-xl);width:100%;max-width:440px;box-shadow:var(--shadow-xl);animation:scaleIn .2s cubic-bezier(.4,0,.2,1)}
+@keyframes scaleIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+.modal-header{padding:28px 28px 0;display:flex;justify-content:space-between;align-items:center}
+.modal-body{padding:24px 28px 28px;display:flex;flex-direction:column;gap:18px}
+.auth-tabs{display:flex;background:var(--bg3);border-radius:var(--radius-sm);padding:4px;gap:4px;margin-bottom:4px}
+.auth-tab{flex:1;padding:8px;border-radius:6px;font-size:.875rem;font-weight:600;color:var(--text3);background:none;transition:var(--transition)}
+.auth-tab.active{background:var(--card);color:var(--text);box-shadow:var(--shadow-sm)}
+.divider{display:flex;align-items:center;gap:12px;color:var(--text4);font-size:.8125rem}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--card-border)}
+.google-btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:11px;background:var(--bg);border:1.5px solid var(--card-border);border-radius:var(--radius-sm);font-size:.875rem;font-weight:600;cursor:pointer;transition:var(--transition);color:var(--text)}
+.google-btn:hover{background:var(--bg3);border-color:var(--text4)}
+
+/* ── APP LAYOUT ──────────────────────────────────────────── */
+#app-page{background:var(--bg2)}
+.app-layout{display:flex;height:100vh;overflow:hidden}
+
+/* SIDEBAR */
+.sidebar{width:var(--sidebar-w);background:var(--card);border-right:1px solid var(--card-border);display:flex;flex-direction:column;flex-shrink:0;transition:width .25s cubic-bezier(.4,0,.2,1),transform .25s;overflow:hidden;z-index:50}
+.sidebar.collapsed{width:64px}
+.sidebar-header{padding:16px;border-bottom:1px solid var(--card-border);display:flex;align-items:center;justify-content:space-between;height:var(--header-h);flex-shrink:0}
+.sidebar-logo{display:flex;align-items:center;gap:10px;overflow:hidden}
+.sidebar-logo-text{font-size:1.125rem;font-weight:800;white-space:nowrap;transition:opacity .2s}
+.sidebar.collapsed .sidebar-logo-text{opacity:0;width:0}
+.sidebar-toggle{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--bg3);color:var(--text3);cursor:pointer;flex-shrink:0;transition:var(--transition)}
+.sidebar-toggle:hover{background:var(--card-border);color:var(--text)}
+.sidebar-nav{padding:12px 8px;flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:2px}
+.nav-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:var(--radius-sm);cursor:pointer;transition:var(--transition);position:relative;white-space:nowrap;overflow:hidden;color:var(--text3)}
+.nav-item:hover{background:var(--bg3);color:var(--text)}
+.nav-item.active{background:var(--primary-50);color:var(--primary);font-weight:600}
+[data-theme="dark"] .nav-item.active{background:rgba(37,99,235,.15);color:#60a5fa}
+.nav-icon{width:20px;height:20px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.nav-label{font-size:.875rem;font-weight:500;white-space:nowrap;transition:opacity .2s,width .2s}
+.sidebar.collapsed .nav-label{opacity:0;width:0;overflow:hidden}
+.nav-badge{background:var(--primary);color:#fff;font-size:.65rem;font-weight:700;border-radius:99px;padding:1px 6px;flex-shrink:0}
+.sidebar.collapsed .nav-badge{display:none}
+.nav-section{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text4);padding:8px 12px 4px;white-space:nowrap;overflow:hidden}
+.sidebar.collapsed .nav-section{opacity:0}
+.sidebar-footer{padding:12px 8px;border-top:1px solid var(--card-border);flex-shrink:0}
+.user-widget{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:var(--radius-sm);cursor:pointer;transition:var(--transition);overflow:hidden}
+.user-widget:hover{background:var(--bg3)}
+.user-info{overflow:hidden;white-space:nowrap;transition:opacity .2s}
+.sidebar.collapsed .user-info{opacity:0;width:0}
+.user-name{font-size:.875rem;font-weight:600;truncate;overflow:hidden;text-overflow:ellipsis}
+.user-plan{font-size:.7rem;color:var(--primary);font-weight:600}
+
+/* MAIN CONTENT */
+.main-content{flex:1;overflow-y:auto;overflow-x:hidden;display:flex;flex-direction:column}
+.app-header{height:var(--header-h);background:var(--card);border-bottom:1px solid var(--card-border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;flex-shrink:0;position:sticky;top:0;z-index:40}
+.page-title{font-size:1rem;font-weight:700;display:flex;align-items:center;gap:8px}
+.header-actions{display:flex;align-items:center;gap:8px}
+.header-search{display:flex;align-items:center;gap:8px;background:var(--bg3);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:7px 14px;min-width:220px;cursor:text}
+.header-search input{background:none;font-size:.875rem;color:var(--text);width:100%}
+.header-search input::placeholder{color:var(--text4)}
+
+/* APP PANEL */
+.panel{display:none;flex:1;flex-direction:column}
+.panel.active{display:flex}
+
+/* ── DASHBOARD HOME ──────────────────────────────────────── */
+.dash-home{padding:28px;display:flex;flex-direction:column;gap:24px;max-width:1300px}
+.welcome-banner{background:linear-gradient(135deg,var(--primary) 0%,var(--accent) 100%);border-radius:var(--radius-xl);padding:28px 36px;color:#fff;display:flex;align-items:center;justify-content:space-between;overflow:hidden;position:relative}
+.welcome-banner::before{content:'';position:absolute;right:-40px;top:-40px;width:200px;height:200px;background:rgba(255,255,255,.07);border-radius:50%}
+.welcome-banner::after{content:'';position:absolute;right:60px;bottom:-60px;width:150px;height:150px;background:rgba(255,255,255,.05);border-radius:50%}
+.welcome-title{font-size:1.5rem;font-weight:800;margin-bottom:4px}
+.welcome-sub{font-size:.9375rem;opacity:.85;margin-bottom:16px}
+
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat-card{padding:20px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-lg);position:relative;overflow:hidden}
+.stat-card::after{content:'';position:absolute;right:-10px;top:-10px;width:70px;height:70px;border-radius:50%;opacity:.08}
+.stat-icon{font-size:1.5rem;margin-bottom:12px}
+.stat-value{font-size:1.75rem;font-weight:800;letter-spacing:-.02em;margin-bottom:2px}
+.stat-label{font-size:.8125rem;color:var(--text3);font-weight:500}
+.stat-change{font-size:.75rem;font-weight:600;margin-top:6px;display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:99px}
+.stat-change.up{background:#d1fae5;color:#065f46}
+.stat-change.neutral{background:var(--bg3);color:var(--text3)}
+[data-theme="dark"] .stat-change.up{background:rgba(16,185,129,.2);color:#6ee7b7}
+
+.quick-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.quick-action{padding:20px 16px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-lg);cursor:pointer;transition:var(--transition);text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
+.quick-action:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:var(--shadow)}
+.quick-action-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem}
+.quick-action h4{font-size:.875rem;font-weight:700}
+.quick-action p{font-size:.78rem;color:var(--text3);line-height:1.4}
+
+.recent-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.recent-list{display:flex;flex-direction:column;gap:8px}
+.recent-item{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--bg3);border-radius:var(--radius-sm);cursor:pointer;transition:var(--transition)}
+.recent-item:hover{background:var(--card-border)}
+.recent-item-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.recent-item-info{flex:1;min-width:0}
+.recent-item-title{font-size:.875rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.recent-item-sub{font-size:.75rem;color:var(--text3)}
+.streak-widget{padding:20px 24px;background:linear-gradient(135deg,#ff6b00,#ff8c42);border-radius:var(--radius-lg);color:#fff;display:flex;align-items:center;gap:16px}
+.streak-days{font-size:2.5rem;font-weight:900;line-height:1}
+.streak-info h4{font-size:1rem;font-weight:700;margin-bottom:2px}
+.streak-info p{font-size:.8125rem;opacity:.85}
+.streak-flame{font-size:2rem}
+
+/* ── AI CHAT ──────────────────────────────────────────── */
+.chat-layout{display:flex;flex:1;overflow:hidden}
+.chat-sidebar{width:260px;background:var(--card);border-right:1px solid var(--card-border);display:flex;flex-direction:column;flex-shrink:0}
+.chat-sidebar-header{padding:16px}
+.chat-list{flex:1;overflow-y:auto;padding:8px}
+.chat-item{padding:10px 12px;border-radius:var(--radius-sm);cursor:pointer;transition:var(--transition)}
+.chat-item:hover{background:var(--bg3)}
+.chat-item.active{background:var(--primary-50)}
+[data-theme="dark"] .chat-item.active{background:rgba(37,99,235,.15)}
+.chat-item-title{font-size:.8125rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:3px}
+.chat-item-meta{font-size:.72rem;color:var(--text4)}
+.chat-main{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.chat-messages{flex:1;overflow-y:auto;padding:24px;display:flex;flex-direction:column;gap:20px}
+.msg{display:flex;gap:12px;max-width:800px}
+.msg.user{margin-left:auto;flex-direction:row-reverse}
+.msg-avatar{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.875rem;font-weight:700;flex-shrink:0}
+.msg-avatar.ai{background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff}
+.msg-avatar.user{background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff}
+.msg-bubble{padding:14px 18px;border-radius:var(--radius-lg);font-size:.9375rem;line-height:1.7;max-width:620px}
+.msg.ai .msg-bubble{background:var(--card);border:1px solid var(--card-border);border-radius:4px var(--radius-lg) var(--radius-lg) var(--radius-lg)}
+.msg.user .msg-bubble{background:var(--primary);color:#fff;border-radius:var(--radius-lg) 4px var(--radius-lg) var(--radius-lg)}
+.msg-bubble code{background:var(--bg3);padding:1px 6px;border-radius:4px;font-family:'Fira Code',monospace;font-size:.85em}
+.msg.user .msg-bubble code{background:rgba(255,255,255,.2)}
+.msg-bubble .step{display:flex;gap:8px;margin-top:12px;padding:12px;background:var(--bg2);border-radius:var(--radius-sm);border-left:3px solid var(--primary)}
+.msg-actions{display:flex;gap:4px;margin-top:6px;opacity:0;transition:.2s}
+.msg:hover .msg-actions{opacity:1}
+.msg-action-btn{padding:4px 10px;border-radius:6px;font-size:.75rem;font-weight:600;background:var(--bg3);color:var(--text3);cursor:pointer;transition:var(--transition)}
+.msg-action-btn:hover{background:var(--card-border);color:var(--text)}
+.typing-indicator{display:flex;gap:5px;padding:14px 18px;background:var(--card);border:1px solid var(--card-border);border-radius:4px var(--radius-lg) var(--radius-lg) var(--radius-lg);width:fit-content}
+.typing-dot{width:8px;height:8px;border-radius:50%;background:var(--text3);animation:bounce .6s ease infinite}
+.typing-dot:nth-child(2){animation-delay:.15s}
+.typing-dot:nth-child(3){animation-delay:.3s}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.chat-input-area{padding:16px 24px;background:var(--card);border-top:1px solid var(--card-border);flex-shrink:0}
+.chat-input-box{background:var(--bg);border:1.5px solid var(--card-border);border-radius:var(--radius-lg);overflow:hidden;transition:var(--transition)}
+.chat-input-box:focus-within{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.chat-input-top{display:flex;align-items:flex-end;gap:8px;padding:12px 16px 4px}
+.chat-textarea{flex:1;background:none;font-size:.9375rem;color:var(--text);resize:none;min-height:24px;max-height:160px;line-height:1.6;padding:0}
+.chat-textarea::placeholder{color:var(--text4)}
+.chat-send-btn{width:36px;height:36px;border-radius:10px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:var(--transition);flex-shrink:0}
+.chat-send-btn:hover{background:var(--primary-dark);transform:scale(1.05)}
+.chat-input-bottom{display:flex;align-items:center;justify-content:space-between;padding:6px 16px 12px}
+.chat-attach-btns{display:flex;gap:4px}
+.attach-btn{display:flex;align-items:center;gap:4px;padding:4px 10px;border-radius:6px;font-size:.75rem;font-weight:600;background:var(--bg3);color:var(--text3);cursor:pointer;transition:var(--transition)}
+.attach-btn:hover{background:var(--card-border);color:var(--text)}
+.chat-hint{font-size:.72rem;color:var(--text4)}
+.subject-chips{display:flex;gap:6px;flex-wrap:wrap;padding-bottom:12px}
+.chip{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:99px;font-size:.78rem;font-weight:600;background:var(--bg3);color:var(--text3);cursor:pointer;transition:var(--transition)}
+.chip:hover,.chip.active{background:var(--primary-100);color:var(--primary)}
+[data-theme="dark"] .chip:hover,[data-theme="dark"] .chip.active{background:rgba(37,99,235,.2);color:#60a5fa}
+
+/* ── ESSAY MARKER ──────────────────────────────────────── */
+.essay-layout{display:grid;grid-template-columns:1fr 1fr;flex:1;gap:0;overflow:hidden}
+.essay-panel{padding:24px;overflow-y:auto;display:flex;flex-direction:column;gap:16px}
+.essay-panel:first-child{border-right:1px solid var(--card-border)}
+.essay-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.score-circle{width:90px;height:90px;border-radius:50%;background:conic-gradient(var(--primary) 78%,var(--bg3) 0);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;flex-shrink:0}
+.score-circle::before{content:'';position:absolute;inset:6px;border-radius:50%;background:var(--card)}
+.score-val{position:relative;font-size:1.5rem;font-weight:900;line-height:1;color:var(--primary)}
+.score-lbl{position:relative;font-size:.6rem;font-weight:700;color:var(--text3)}
+.criteria-list{display:flex;flex-direction:column;gap:8px}
+.criteria-item{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.875rem}
+.criteria-bar{flex:1;height:6px;background:var(--bg3);border-radius:99px;overflow:hidden}
+.criteria-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--primary),var(--accent))}
+.feedback-tag{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:99px;font-size:.75rem;font-weight:600;margin:2px}
+.tag-strength{background:#d1fae5;color:#065f46}
+.tag-improve{background:#fee2e2;color:#991b1b}
+.tag-suggestion{background:#dbeafe;color:#1d4ed8}
+[data-theme="dark"] .tag-strength{background:rgba(16,185,129,.2);color:#6ee7b7}
+[data-theme="dark"] .tag-improve{background:rgba(239,68,68,.2);color:#fca5a5}
+[data-theme="dark"] .tag-suggestion{background:rgba(37,99,235,.2);color:#93c5fd}
+
+/* ── FLASHCARDS ──────────────────────────────────────────── */
+.flashcard-study{display:flex;flex:1;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:32px}
+.flashcard{width:100%;max-width:600px;height:320px;perspective:1000px;cursor:pointer}
+.flashcard-inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
+.flashcard.flipped .flashcard-inner{transform:rotateY(180deg)}
+.flashcard-face{position:absolute;inset:0;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-xl);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;box-shadow:var(--shadow-lg);backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.flashcard-back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--primary-50),var(--card))}
+[data-theme="dark"] .flashcard-back{background:linear-gradient(135deg,rgba(37,99,235,.1),var(--card))}
+.flashcard-q{font-size:1.25rem;font-weight:700;text-align:center;line-height:1.5}
+.flashcard-a{font-size:1rem;color:var(--text2);text-align:center;line-height:1.7}
+.flashcard-deck{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;padding:24px;overflow-y:auto;flex:1}
+.deck-card{padding:20px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-lg);cursor:pointer;transition:var(--transition)}
+.deck-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.deck-card h4{font-size:.875rem;font-weight:700;margin-bottom:8px}
+.deck-card p{font-size:.8rem;color:var(--text3);line-height:1.5}
+.deck-card-footer{display:flex;justify-content:space-between;margin-top:12px;font-size:.75rem;color:var(--text4)}
+.confidence-btns{display:flex;gap:8px;justify-content:center}
+.conf-btn{padding:10px 24px;border-radius:var(--radius-sm);font-size:.875rem;font-weight:700;cursor:pointer;transition:var(--transition);border:2px solid transparent}
+.conf-btn:hover{transform:scale(1.05)}
+.conf-easy{background:#d1fae5;color:#065f46;border-color:#a7f3d0}
+.conf-medium{background:#fef3c7;color:#92400e;border-color:#fde68a}
+.conf-hard{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+[data-theme="dark"] .conf-easy{background:rgba(16,185,129,.2);color:#6ee7b7;border-color:rgba(16,185,129,.3)}
+[data-theme="dark"] .conf-medium{background:rgba(245,158,11,.2);color:#fcd34d;border-color:rgba(245,158,11,.3)}
+[data-theme="dark"] .conf-hard{background:rgba(239,68,68,.2);color:#fca5a5;border-color:rgba(239,68,68,.3)}
+.progress-bar{width:100%;max-width:600px;height:8px;background:var(--bg3);border-radius:99px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:99px;transition:width .4s}
+.flashcard-counter{font-size:.875rem;color:var(--text3);font-weight:600}
+
+/* ── PRACTICE EXAM ──────────────────────────────────────── */
+.exam-setup{max-width:680px;margin:0 auto;padding:32px;display:flex;flex-direction:column;gap:20px;width:100%}
+.exam-field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.select{width:100%;padding:10px 14px;background:var(--bg3);border:1.5px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:.875rem;transition:var(--transition);appearance:none;cursor:pointer}
+.select:focus{border-color:var(--primary);background:var(--card);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+.qtype-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.qtype-card{padding:14px;border:1.5px solid var(--card-border);border-radius:var(--radius);cursor:pointer;transition:var(--transition);text-align:center}
+.qtype-card:hover{border-color:var(--primary-light)}
+.qtype-card.selected{border-color:var(--primary);background:var(--primary-50)}
+[data-theme="dark"] .qtype-card.selected{background:rgba(37,99,235,.15)}
+.qtype-card span{font-size:1.25rem;display:block;margin-bottom:6px}
+.qtype-card p{font-size:.8rem;font-weight:600}
+
+.exam-questions{padding:32px;max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:28px;width:100%;overflow-y:auto;flex:1}
+.question-card{padding:24px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-lg)}
+.question-num{font-size:.75rem;font-weight:700;color:var(--text4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.question-text{font-size:1rem;font-weight:600;margin-bottom:16px;line-height:1.6}
+.mc-options{display:flex;flex-direction:column;gap:8px}
+.mc-option{display:flex;align-items:center;gap:12px;padding:11px 16px;border:1.5px solid var(--card-border);border-radius:var(--radius-sm);cursor:pointer;transition:var(--transition);font-size:.9rem}
+.mc-option:hover{border-color:var(--primary-light);background:var(--primary-50)}
+.mc-option.selected{border-color:var(--primary);background:var(--primary-50);color:var(--primary);font-weight:600}
+.mc-option.correct{border-color:var(--success);background:#d1fae5;color:#065f46}
+.mc-option.wrong{border-color:var(--danger);background:#fee2e2;color:#991b1b}
+[data-theme="dark"] .mc-option:hover{background:rgba(37,99,235,.1)}
+[data-theme="dark"] .mc-option.selected{background:rgba(37,99,235,.15)}
+[data-theme="dark"] .mc-option.correct{background:rgba(16,185,129,.2);color:#6ee7b7;border-color:rgba(16,185,129,.4)}
+[data-theme="dark"] .mc-option.wrong{background:rgba(239,68,68,.2);color:#fca5a5;border-color:rgba(239,68,68,.4)}
+.option-letter{width:28px;height:28px;border-radius:8px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:.8125rem;font-weight:700;flex-shrink:0}
+.sa-input{min-height:80px}
+.exam-timer{display:flex;align-items:center;gap:8px;padding:6px 14px;background:var(--bg3);border-radius:99px;font-size:.875rem;font-weight:700;font-family:'Fira Code',monospace;color:var(--text)}
+
+/* ── ANALYTICS ──────────────────────────────────────────── */
+.analytics-dash{padding:28px;display:flex;flex-direction:column;gap:24px;max-width:1200px}
+.mini-chart{height:60px;position:relative;overflow:hidden}
+.chart-bars{display:flex;align-items:flex-end;gap:4px;height:100%}
+.chart-bar{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--primary-light),var(--primary));opacity:.7;transition:.3s}
+.chart-bar:hover{opacity:1}
+.donut-wrap{width:120px;height:120px;position:relative;flex-shrink:0}
+.donut-svg{width:100%;height:100%;transform:rotate(-90deg)}
+.donut-track{fill:none;stroke:var(--bg3);stroke-width:12}
+.donut-fill{fill:none;stroke-width:12;stroke-linecap:round;transition:stroke-dasharray .6s cubic-bezier(.4,0,.2,1)}
+.donut-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.subject-list{display:flex;flex-direction:column;gap:10px}
+.subject-row{display:flex;align-items:center;gap:12px;font-size:.875rem}
+.subject-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.subject-name{flex:1;font-weight:500}
+.subject-pct{font-weight:700;color:var(--text2)}
+.subject-bar-wrap{width:80px;height:6px;background:var(--bg3);border-radius:99px;overflow:hidden}
+.subject-bar-fill{height:100%;border-radius:99px}
+
+/* ── SETTINGS ──────────────────────────────────────────── */
+.settings-layout{padding:28px;max-width:800px;display:flex;flex-direction:column;gap:24px}
+.settings-section{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-lg);overflow:hidden}
+.settings-section-title{padding:16px 20px;border-bottom:1px solid var(--card-border);font-size:.9375rem;font-weight:700}
+.settings-row{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--card-border);gap:20px}
+.settings-row:last-child{border-bottom:none}
+.settings-row-info h4{font-size:.875rem;font-weight:600;margin-bottom:2px}
+.settings-row-info p{font-size:.8rem;color:var(--text3)}
+.toggle{width:44px;height:24px;background:var(--bg3);border-radius:99px;position:relative;cursor:pointer;transition:.2s;flex-shrink:0;border:1.5px solid var(--card-border)}
+.toggle.on{background:var(--primary);border-color:var(--primary)}
+.toggle::after{content:'';position:absolute;width:16px;height:16px;border-radius:50%;background:#fff;top:2px;left:2px;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.toggle.on::after{left:22px}
+.color-swatches{display:flex;gap:8px}
+.swatch{width:28px;height:28px;border-radius:50%;cursor:pointer;transition:.15s;border:2px solid transparent}
+.swatch:hover{transform:scale(1.15)}
+.swatch.active{border-color:var(--text);transform:scale(1.1)}
+
+/* ── UPGRADE PROMPT ──────────────────────────────────────── */
+.upgrade-banner{background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:var(--radius-lg);padding:20px 24px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.upgrade-btn{background:rgba(255,255,255,.2);color:#fff;border:1.5px solid rgba(255,255,255,.4);padding:8px 20px;border-radius:var(--radius-sm);font-size:.875rem;font-weight:700;cursor:pointer;transition:.15s;backdrop-filter:blur(4px)}
+.upgrade-btn:hover{background:rgba(255,255,255,.3)}
+.usage-bar-wrap{width:100%;height:6px;background:rgba(255,255,255,.25);border-radius:99px;overflow:hidden;margin-top:8px}
+.usage-bar-fill{height:100%;background:#fff;border-radius:99px;width:62%}
+
+/* ── TOAST ──────────────────────────────────────────── */
+.toast-container{position:fixed;bottom:24px;right:24px;z-index:999;display:flex;flex-direction:column;gap:8px}
+.toast{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--text);color:var(--bg);border-radius:var(--radius);font-size:.875rem;font-weight:500;box-shadow:var(--shadow-lg);animation:slideUp .3s ease,fadeOut .3s ease 2.7s forwards;min-width:280px;max-width:360px}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeOut{to{opacity:0;transform:translateY(10px)}}
+.toast-icon{font-size:1.1rem;flex-shrink:0}
+
+/* ── MOBILE OVERLAY ──────────────────────────────────── */
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:49;backdrop-filter:blur(2px)}
+
+/* ── ANIMATIONS ──────────────────────────────────────── */
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeIn .3s ease forwards}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.pulse{animation:pulse 2s ease infinite}
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+@media(max-width:1024px){
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .recent-grid{grid-template-columns:1fr}
+  .essay-layout{grid-template-columns:1fr;overflow-y:auto}
+  .essay-panel:first-child{border-right:none;border-bottom:1px solid var(--card-border)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .chat-sidebar{display:none}
+}
+@media(max-width:768px){
+  .sidebar{position:fixed;height:100%;transform:translateX(-100%);z-index:50}
+  .sidebar.mobile-open{transform:translateX(0)}
+  .mobile-overlay{display:block}
+  .mobile-overlay.hidden{display:none}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .features-grid{grid-template-columns:1fr}
+  .testimonials-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .footer-grid{grid-template-columns:1fr}
+  .nav-inner{padding:0 16px}
+  .hero{padding:60px 16px 40px}
+  .section{padding:48px 16px}
+  .features-grid{padding:48px 16px}
+  .exam-field-row{grid-template-columns:1fr}
+  .qtype-grid{grid-template-columns:1fr}
+  .header-search{display:none}
+  .welcome-banner{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:480px){
+  .stats-grid{grid-template-columns:1fr}
+  .quick-actions{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ LANDING PAGE ══════════════ -->
+<div id="landing-page" class="page active flex-col">
+  <!-- NAV -->
+  <nav class="landing-nav glass">
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-icon">S</div>
+        StudyFlow
+      </div>
+      <div class="nav-links">
+        <a class="nav-link" onclick="scrollTo('#features')">Features</a>
+        <a class="nav-link" onclick="scrollTo('#pricing')">Pricing</a>
+        <a class="nav-link" onclick="scrollTo('#testimonials')">Reviews</a>
+        <a class="nav-link" onclick="scrollTo('#faq')">FAQ</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn btn-ghost btn-sm" onclick="openAuth('login')">Sign In</button>
+        <button class="btn btn-primary btn-sm btn-pill" onclick="openAuth('signup')">Start Free →</button>
+        <button class="btn btn-icon btn-ghost" onclick="toggleTheme()" title="Toggle dark mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero relative">
+    <div class="bg-blob blob1"></div>
+    <div class="bg-blob blob2"></div>
+    <div class="hero-badge">🎓 Trusted by 50,000+ students worldwide</div>
+    <h1>Study Smarter,<br/>Not Harder.</h1>
+    <p>Your AI-powered study companion that explains, quizzes, marks, and helps you learn faster — from Year 7 to university level.</p>
+    <div class="hero-actions">
+      <button class="btn btn-primary btn-lg btn-pill" onclick="openAuth('signup')">🚀 Start for Free</button>
+      <button class="btn btn-secondary btn-lg btn-pill" onclick="openAuth('login')">Sign In</button>
+    </div>
+    <div class="hero-visual fade-in">
+      <div class="hero-mockup">
+        <div class="mockup-bar">
+          <div class="mockup-dot" style="background:#ef4444"></div>
+          <div class="mockup-dot" style="background:#f59e0b"></div>
+          <div class="mockup-dot" style="background:#10b981"></div>
+          <div class="mockup-url">app.studyflow.io/chat</div>
+        </div>
+        <div style="display:grid;grid-template-columns:260px 1fr;height:360px">
+          <div style="background:var(--bg2);border-right:1px solid var(--card-border);padding:16px;display:flex;flex-direction:column;gap:8px">
+            <div style="font-size:.7rem;font-weight:700;color:var(--text4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">Chats</div>
+            <div style="padding:8px 10px;border-radius:8px;background:var(--primary-50);font-size:.78rem;font-weight:600;color:var(--primary)">📐 Quadratic Equations</div>
+            <div style="padding:8px 10px;border-radius:8px;font-size:.78rem;color:var(--text3)">⚗️ Organic Chemistry</div>
+            <div style="padding:8px 10px;border-radius:8px;font-size:.78rem;color:var(--text3)">📝 Essay: To Kill a...</div>
+            <div style="padding:8px 10px;border-radius:8px;font-size:.78rem;color:var(--text3)">🌍 WW2 Causes</div>
+          </div>
+          <div style="padding:20px;display:flex;flex-direction:column;gap:14px;background:var(--bg)">
+            <div style="display:flex;gap:10px;align-self:flex-start">
+              <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;color:#fff;font-size:.75rem;font-weight:700;flex-shrink:0">AI</div>
+              <div style="background:var(--card);border:1px solid var(--card-border);border-radius:4px 14px 14px 14px;padding:12px 16px;font-size:.8125rem;line-height:1.6;max-width:440px">Let me walk you through solving <strong>x² + 5x + 6 = 0</strong> step by step...<br/><br/>
+              <strong style="color:var(--primary)">Step 1:</strong> Identify a=1, b=5, c=6<br/>
+              <strong style="color:var(--primary)">Step 2:</strong> Find two numbers that multiply to 6 and add to 5 → <strong>2 and 3</strong></div>
+            </div>
+            <div style="display:flex;gap:10px;align-self:flex-end;flex-direction:row-reverse">
+              <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#ef4444);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.75rem;font-weight:700;flex-shrink:0">J</div>
+              <div style="background:var(--primary);border-radius:14px 4px 14px 14px;padding:12px 16px;font-size:.8125rem;color:#fff">Can you help me check my essay on climate change?</div>
+            </div>
+            <div style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:10px 14px;font-size:.78rem;display:flex;align-items:center;gap:8px">
+              <span style="color:var(--text4)">📎</span> <span style="font-weight:600">climate_essay.docx</span> <span style="color:var(--text4)">(2.3 MB)</span>
+              <span style="margin-left:auto;background:var(--success);color:#fff;padding:2px 8px;border-radius:4px;font-size:.7rem;font-weight:700">Analyzing...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <div id="features">
+    <div class="text-center" style="padding-top:80px;padding-bottom:0;padding-left:32px;padding-right:32px">
+      <div class="section-label">Everything You Need</div>
+      <h2 class="section-title">AI tools built for every student</h2>
+      <p class="section-sub" style="margin:0 auto">From homework help to essay grading — StudyFlow covers every subject and every type of assignment.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card card-hover">
+        <div class="feature-icon" style="background:#eff6ff">🤖</div>
+        <h3>AI Homework Help</h3>
+        <p>Upload photos, PDFs, or type questions. Get step-by-step explanations tailored to your year level — not just the answers.</p>
+      </div>
+      <div class="feature-card card-hover">
+        <div class="feature-icon" style="background:#ede9fe">📋</div>
+        <h3>Practice Exam Generator</h3>
+        <p>Generate full practice exams by subject, year level, and difficulty. Includes answer keys, marking guides, and timer mode.</p>
+      </div>
+      <div class="feature-card card-hover">
+        <div class="feature-icon" style="background:#ecfdf5">✍️</div>
+        <h3>AI Essay Marker</h3>
+        <p>Upload your rubric and essay. Get a grade estimate, inline comments, grammar feedback, and specific improvement suggestions.</p>
+      </div>
+      <div class="feature-card card-hover">
+        <div class="feature-icon" style="background:#fef3c7">🃏</div>
+        <h3>Flashcard Creator</h3>
+        <p>Turn notes and textbooks into smart flashcards automatically. Study with spaced repetition and confidence-based tracking.</p>
+      </div>
+      <div class="feature-card card-hover">
+        <div class="feature-icon" style="background:#fee2e2">📊</div>
+        <h3>Worksheet Analyzer</h3>
+        <p>Photograph your worksheet and let the AI detect the subject, read each question, and provide guided hints before revealing answers.</p>
+      </div>
+      <div class="feature-card card-hover">
+        <div class="feature-icon" style="background:#f0fdf4">📈</div>
+        <h3>Study Analytics</h3>
+        <p>Track your study streak, quiz accuracy, flashcard mastery, and weekly progress with beautiful charts and insights.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" style="background:var(--bg2)">
+    <div class="section-label text-center">Simple Process</div>
+    <h2 class="section-title text-center" style="max-width:100%">Get started in 3 steps</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;margin-top:48px">
+      <div class="text-center">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--primary);color:#fff;font-size:1.5rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">1</div>
+        <h3 style="font-weight:700;margin-bottom:8px">Create Your Account</h3>
+        <p style="color:var(--text3);font-size:.9rem;line-height:1.6">Sign up free in seconds. No credit card required to get started.</p>
+      </div>
+      <div class="text-center">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--accent);color:#fff;font-size:1.5rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">2</div>
+        <h3 style="font-weight:700;margin-bottom:8px">Upload or Type</h3>
+        <p style="color:var(--text3);font-size:.9rem;line-height:1.6">Drop in a homework photo, paste your essay, or simply ask a question.</p>
+      </div>
+      <div class="text-center">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--success);color:#fff;font-size:1.5rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">3</div>
+        <h3 style="font-weight:700;margin-bottom:8px">Learn & Improve</h3>
+        <p style="color:var(--text3);font-size:.9rem;line-height:1.6">Get instant AI explanations, feedback, and practice — then track your growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section">
+    <div class="section-label">Student Reviews</div>
+    <h2 class="section-title">Loved by 50,000+ students</h2>
+    <div class="testimonials-grid mt-8">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p>"StudyFlow helped me go from a C to an A in Chemistry. The step-by-step explanations are incredible — it's like having a private tutor available 24/7."</p>
+        <div class="testimonial-author">
+          <div class="avatar" style="background:linear-gradient(135deg,var(--primary),var(--accent))">S</div>
+          <div><strong style="font-size:.875rem">Sarah M.</strong><br/><span style="font-size:.75rem;color:var(--text3)">Year 11 Student, Sydney</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p>"The essay marker is phenomenal. It caught structural issues my teacher never mentioned and my writing has improved massively in just 3 weeks."</p>
+        <div class="testimonial-author">
+          <div class="avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">J</div>
+          <div><strong style="font-size:.875rem">James K.</strong><br/><span style="font-size:.75rem;color:var(--text3)">University Student, Melbourne</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p>"I made 200 flashcards from my entire biology textbook in 10 minutes. The spaced repetition system is genius — I aced my final exam!"</p>
+        <div class="testimonial-author">
+          <div class="avatar" style="background:linear-gradient(135deg,var(--success),#06b6d4)">P</div>
+          <div><strong style="font-size:.875rem">Priya R.</strong><br/><span style="font-size:.75rem;color:var(--text3)">Year 12 Student, Brisbane</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="section" style="background:var(--bg2)">
+    <div class="section-label text-center">Pricing</div>
+    <h2 class="section-title text-center" style="max-width:100%">Choose your plan</h2>
+    <p class="section-sub text-center" style="margin:0 auto 48px">Start free and upgrade anytime. One-time payment, lifetime access. No subscriptions.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="badge badge-gray">Free</div>
+        <div class="pricing-price">$0<span class="pricing-period" style="font-size:1rem;font-weight:400"> AUD</span></div>
+        <p style="font-size:.875rem;color:var(--text3)">Perfect for getting started</p>
+        <ul class="pricing-features">
+          <li>20 AI messages per day</li>
+          <li>3 file uploads</li>
+          <li>Basic flashcards</li>
+          <li>3 practice exams</li>
+          <li class="no">Essay marking</li>
+          <li class="no">Unlimited uploads</li>
+          <li class="no">Priority support</li>
+        </ul>
+        <button class="btn btn-secondary w-full" onclick="openAuth('signup')">Get Started Free</button>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-popular">⭐ Most Popular</div>
+        <div class="badge badge-primary">Premium</div>
+        <div class="pricing-price" style="color:var(--primary)">$2<span style="font-size:1.5rem">.99</span><span class="pricing-period" style="font-size:1rem;font-weight:400"> AUD one-time</span></div>
+        <p style="font-size:.875rem;color:var(--text3)">Everything you need to ace exams</p>
+        <ul class="pricing-features">
+          <li>Unlimited AI messages</li>
+          <li>Unlimited file uploads</li>
+          <li>Unlimited flashcards</li>
+          <li>Unlimited practice exams</li>
+          <li>Unlimited essay marking</li>
+          <li>Faster AI responses</li>
+          <li>Priority support</li>
+        </ul>
+        <button class="btn btn-primary w-full" onclick="window.open('https://buy.stripe.com/test_00w00lbfX2EbbyBbYS5AQ00','_blank')">Get Lifetime Access</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Frequently asked questions</h2>
+    <div class="faq-list mt-6">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What subjects does StudyFlow support? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a">StudyFlow supports all major high school and university subjects including Mathematics, English, Chemistry, Physics, Biology, Accounting, History, Geography, Economics, and more. The AI adapts its explanations from Year 7 through university level.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Will the AI just give me the answers? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a">No — StudyFlow is designed to help you learn, not do your work for you. It provides step-by-step explanations, hints, and guided reasoning so you develop a genuine understanding of each topic.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What file types can I upload? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a">You can upload PDFs, Word documents (.docx), PowerPoint files (.pptx), images (JPG, PNG, HEIC), and photographs of handwritten work. The AI reads and analyzes all of these formats.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Is my data private and secure? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a">Absolutely. Your data is encrypted at rest and in transit. We never sell your data or use it to train models without explicit consent. You can delete your account and all associated data at any time.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Can I cancel my subscription? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a">Yes, you can cancel anytime with no fees or penalties. Your premium access continues until the end of your billing period, after which you'll be moved to the free plan automatically.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="landing-footer">
+    <div class="footer-grid">
+      <div>
+        <div class="logo mb-4">
+          <div class="logo-icon">S</div>
+          StudyFlow
+        </div>
+        <p style="font-size:.875rem;color:var(--text3);line-height:1.7;max-width:280px">The AI-powered study companion trusted by students from Year 7 to university across Australia and beyond.</p>
+        <div style="display:flex;gap:10px;margin-top:20px">
+          <button class="btn btn-ghost btn-icon" style="font-size:1.1rem">𝕏</button>
+          <button class="btn btn-ghost btn-icon" style="font-size:1.1rem">in</button>
+          <button class="btn btn-ghost btn-icon" style="font-size:1.1rem">📸</button>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col">Product</h4>
+        <div class="footer-links">
+          <a class="footer-link">AI Chat</a>
+          <a class="footer-link">Essay Marker</a>
+          <a class="footer-link">Practice Exams</a>
+          <a class="footer-link">Flashcards</a>
+          <a class="footer-link">Pricing</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col">Company</h4>
+        <div class="footer-links">
+          <a class="footer-link">About</a>
+          <a class="footer-link">Blog</a>
+          <a class="footer-link">Careers</a>
+          <a class="footer-link">Press</a>
+          <a class="footer-link">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col">Legal</h4>
+        <div class="footer-links">
+          <a class="footer-link">Privacy Policy</a>
+          <a class="footer-link">Terms of Service</a>
+          <a class="footer-link">Cookie Policy</a>
+          <a class="footer-link">Academic Integrity</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 StudyFlow. All rights reserved.</span>
+      <span>Made with ❤️ for students</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════ AUTH MODAL ══════════════ -->
+<div class="modal-overlay" id="auth-modal" onclick="closeAuthOnBg(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="logo" style="font-size:1.125rem">
+        <div class="logo-icon" style="width:30px;height:30px;font-size:.85rem">S</div>
+        StudyFlow
+      </div>
+      <button class="btn btn-ghost btn-icon" onclick="closeAuth()" style="font-size:1.25rem">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="tab-login" onclick="switchTab('login')">Sign In</button>
+        <button class="auth-tab" id="tab-signup" onclick="switchTab('signup')">Sign Up</button>
+      </div>
+
+      <!-- Google -->
+      <button class="google-btn" onclick="handleGoogleAuth()">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        Continue with Google
+      </button>
+
+      <div class="divider">or continue with email</div>
+
+      <div id="signup-fields" class="hidden flex flex-col gap-3">
+        <div>
+          <label class="label">Full Name</label>
+          <input class="input" type="text" placeholder="Alex Johnson" id="reg-name"/>
+        </div>
+        <div>
+          <label class="label">Year Level</label>
+          <select class="select input" id="reg-year">
+            <option>Year 7</option><option>Year 8</option><option>Year 9</option>
+            <option>Year 10</option><option>Year 11</option><option selected>Year 12</option>
+            <option>University – Undergraduate</option><option>University – Postgraduate</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label class="label">Email Address</label>
+        <input class="input" type="email" placeholder="alex@email.com" id="auth-email"/>
+      </div>
+      <div>
+        <label class="label" style="display:flex;justify-content:space-between">
+          Password
+          <a style="font-weight:500;color:var(--primary);font-size:.8125rem;cursor:pointer" id="forgot-link">Forgot password?</a>
+        </label>
+        <input class="input" type="password" placeholder="••••••••" id="auth-password"/>
+      </div>
+
+      <div id="signup-terms" class="hidden" style="font-size:.8rem;color:var(--text3)">
+        By signing up you agree to our <a style="color:var(--primary)">Terms of Service</a> and <a style="color:var(--primary)">Privacy Policy</a>.
+      </div>
+
+      <button class="btn btn-primary w-full btn-lg" id="auth-submit-btn" onclick="handleAuth()">Sign In</button>
+
+      <p style="text-align:center;font-size:.8125rem;color:var(--text3)">
+        <span id="auth-switch-text">Don't have an account?</span>
+        <a style="color:var(--primary);font-weight:600;cursor:pointer;margin-left:4px" onclick="switchTab('signup')" id="auth-switch-link">Sign up free →</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ APP PAGE ══════════════ -->
+<div id="app-page" class="page">
+  <div class="mobile-overlay hidden" id="mobile-overlay" onclick="closeMobileSidebar()"></div>
+  <div class="app-layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <div class="logo-icon" style="width:30px;height:30px;font-size:.85rem;flex-shrink:0">S</div>
+          <span class="sidebar-logo-text font-bold">StudyFlow</span>
+        </div>
+        <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+      </div>
+
+      <div class="sidebar-nav">
+        <div class="nav-section">Main</div>
+        <div class="nav-item active" onclick="showPanel('home')">
+          <div class="nav-icon">🏠</div>
+          <span class="nav-label">Home</span>
+        </div>
+        <div class="nav-item" onclick="showPanel('chat')">
+          <div class="nav-icon">💬</div>
+          <span class="nav-label">AI Chat</span>
+          <span class="nav-badge">3</span>
+        </div>
+        <div class="nav-item" onclick="showPanel('homework')">
+          <div class="nav-icon">📚</div>
+          <span class="nav-label">Homework Helper</span>
+        </div>
+        <div class="nav-item" onclick="showPanel('essay')">
+          <div class="nav-icon">✍️</div>
+          <span class="nav-label">Essay Marker</span>
+        </div>
+        <div class="nav-item" onclick="showPanel('flashcards')">
+          <div class="nav-icon">🃏</div>
+          <span class="nav-label">Flashcards</span>
+        </div>
+        <div class="nav-item" onclick="showPanel('exam')">
+          <div class="nav-icon">📋</div>
+          <span class="nav-label">Practice Exams</span>
+        </div>
+        <div class="nav-section">Library</div>
+        <div class="nav-item" onclick="showPanel('files')">
+          <div class="nav-icon">📁</div>
+          <span class="nav-label">File Library</span>
+        </div>
+        <div class="nav-item" onclick="showPanel('analytics')">
+          <div class="nav-icon">📊</div>
+          <span class="nav-label">Analytics</span>
+        </div>
+        <div class="nav-section">Account</div>
+        <div class="nav-item" onclick="showPanel('settings')">
+          <div class="nav-icon">⚙️</div>
+          <span class="nav-label">Settings</span>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div style="padding:0 8px 10px">
+          <div style="background:var(--bg3);border-radius:var(--radius-sm);padding:12px;font-size:.75rem">
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+              <span style="font-weight:600;color:var(--text2)">Free Plan</span>
+              <span style="color:var(--primary);font-weight:700;cursor:pointer" onclick="showPanel('settings')">Upgrade</span>
+            </div>
+            <div style="background:var(--card-border);height:5px;border-radius:99px;overflow:hidden">
+              <div style="width:62%;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:99px"></div>
+            </div>
+            <div style="color:var(--text4);margin-top:5px">12/20 messages used today</div>
+          </div>
+        </div>
+        <div class="user-widget">
+          <div class="avatar" style="background:linear-gradient(135deg,var(--primary),var(--accent));width:36px;height:36px;font-size:.9rem;flex-shrink:0">A</div>
+          <div class="user-info">
+            <div class="user-name">Alex Johnson</div>
+            <div class="user-plan">⚡ Free Plan</div>
+          </div>
+          <button class="btn btn-ghost btn-icon btn-sm ml-auto" onclick="handleLogout()" title="Sign out">↩</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      <!-- APP HEADER -->
+      <header class="app-header">
+        <div style="display:flex;align-items:center;gap:12px">
+          <button class="btn btn-ghost btn-icon" id="mobile-menu-btn" onclick="openMobileSidebar()" style="display:none">☰</button>
+          <div class="page-title" id="page-title">🏠 Dashboard</div>
+        </div>
+        <div class="header-actions">
+          <div class="header-search">
+            <span style="font-size:.9rem;color:var(--text4)">🔍</span>
+            <input placeholder="Search anything..."/>
+            <span style="font-size:.7rem;color:var(--text4);flex-shrink:0">⌘K</span>
+          </div>
+          <button class="btn btn-ghost btn-icon" onclick="toggleTheme()">🌙</button>
+          <button class="btn btn-ghost btn-icon">🔔</button>
+          <div class="avatar" style="background:linear-gradient(135deg,var(--primary),var(--accent));width:34px;height:34px;font-size:.85rem;cursor:pointer">A</div>
+        </div>
+      </header>
+
+      <!-- ─── HOME PANEL ─── -->
+      <div class="panel active" id="panel-home">
+        <div class="dash-home">
+          <!-- Welcome Banner -->
+          <div class="welcome-banner">
+            <div>
+              <div class="welcome-title">Good afternoon, Alex! 👋</div>
+              <div class="welcome-sub">You have 8 messages remaining today. Keep up the great work!</div>
+              <div class="usage-bar-wrap">
+                <div class="usage-bar-fill"></div>
+              </div>
+            </div>
+            <button class="upgrade-btn" onclick="window.open('https://buy.stripe.com/test_00w00lbfX2EbbyBbYS5AQ00','_blank')">⚡ Upgrade to Premium</button>
+          </div>
+
+          <!-- Stats -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">🔥</div>
+              <div class="stat-value">12</div>
+              <div class="stat-label">Day Streak</div>
+              <div class="stat-change up">↑ Best ever!</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">⏱️</div>
+              <div class="stat-value">47h</div>
+              <div class="stat-label">Total Study Time</div>
+              <div class="stat-change up">↑ +3.2h this week</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🃏</div>
+              <div class="stat-value">284</div>
+              <div class="stat-label">Flashcards Mastered</div>
+              <div class="stat-change neutral">12 due today</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🎯</div>
+              <div class="stat-value">87%</div>
+              <div class="stat-label">Quiz Accuracy</div>
+              <div class="stat-change up">↑ +5% this month</div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div>
+            <h3 class="font-bold mb-4">Quick Actions</h3>
+            <div class="quick-actions">
+              <div class="quick-action" onclick="showPanel('chat')">
+                <div class="quick-action-icon" style="background:var(--primary-100)">💬</div>
+                <h4>AI Chat</h4>
+                <p>Ask any question instantly</p>
+              </div>
+              <div class="quick-action" onclick="showPanel('homework')">
+                <div class="quick-action-icon" style="background:#ede9fe">📚</div>
+                <h4>Homework Help</h4>
+                <p>Upload & get guided help</p>
+              </div>
+              <div class="quick-action" onclick="showPanel('essay')">
+                <div class="quick-action-icon" style="background:#ecfdf5">✍️</div>
+                <h4>Mark Essay</h4>
+                <p>AI grading & feedback</p>
+              </div>
+              <div class="quick-action" onclick="showPanel('flashcards')">
+                <div class="quick-action-icon" style="background:#fef3c7">🃏</div>
+                <h4>Flashcards</h4>
+                <p>Review due cards now</p>
+              </div>
+              <div class="quick-action" onclick="showPanel('exam')">
+                <div class="quick-action-icon" style="background:#fee2e2">📋</div>
+                <h4>Practice Exam</h4>
+                <p>Generate a new exam</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent -->
+          <div class="recent-grid">
+            <div>
+              <h3 class="font-bold mb-4">Recent Chats</h3>
+              <div class="recent-list">
+                <div class="recent-item">
+                  <div class="recent-item-icon" style="background:var(--primary-100)">📐</div>
+                  <div class="recent-item-info">
+                    <div class="recent-item-title">Quadratic Equations – Factoring</div>
+                    <div class="recent-item-sub">Mathematics · 2 hours ago</div>
+                  </div>
+                  <span class="badge badge-primary">Math</span>
+                </div>
+                <div class="recent-item">
+                  <div class="recent-item-icon" style="background:#ede9fe">⚗️</div>
+                  <div class="recent-item-info">
+                    <div class="recent-item-title">Organic Chemistry: Functional Groups</div>
+                    <div class="recent-item-sub">Chemistry · Yesterday</div>
+                  </div>
+                  <span class="badge badge-purple">Chem</span>
+                </div>
+                <div class="recent-item">
+                  <div class="recent-item-icon" style="background:#ecfdf5">📝</div>
+                  <div class="recent-item-info">
+                    <div class="recent-item-title">Essay: Climate Change Policy</div>
+                    <div class="recent-item-sub">English · 2 days ago</div>
+                  </div>
+                  <span class="badge badge-success">English</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-bold mb-4">Study Streak</h3>
+              <div class="streak-widget mb-4">
+                <div class="streak-flame">🔥</div>
+                <div>
+                  <div class="streak-days">12</div>
+                  <div style="font-size:.8rem;opacity:.8">day streak</div>
+                </div>
+                <div class="streak-info ml-auto">
+                  <h4>You're on fire!</h4>
+                  <p>Study today to reach 13 days</p>
+                </div>
+              </div>
+              <h3 class="font-bold mb-3">Upcoming Flashcards</h3>
+              <div class="recent-list">
+                <div class="recent-item">
+                  <div class="recent-item-icon" style="background:#fef3c7">🃏</div>
+                  <div class="recent-item-info">
+                    <div class="recent-item-title">Biology – Cell Division</div>
+                    <div class="recent-item-sub">18 cards due</div>
+                  </div>
+                  <button class="btn btn-primary btn-xs" onclick="showPanel('flashcards')">Study</button>
+                </div>
+                <div class="recent-item">
+                  <div class="recent-item-icon" style="background:#ede9fe">🃏</div>
+                  <div class="recent-item-info">
+                    <div class="recent-item-title">Chemistry – Periodic Table</div>
+                    <div class="recent-item-sub">7 cards due</div>
+                  </div>
+                  <button class="btn btn-primary btn-xs" onclick="showPanel('flashcards')">Study</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── CHAT PANEL ─── -->
+      <div class="panel" id="panel-chat">
+        <div class="chat-layout">
+          <div class="chat-sidebar">
+            <div class="chat-sidebar-header">
+              <button class="btn btn-primary w-full btn-sm" onclick="showToast('New conversation started!','💬')">+ New Chat</button>
+            </div>
+            <div class="chat-list">
+              <div style="font-size:.7rem;font-weight:700;color:var(--text4);text-transform:uppercase;letter-spacing:.08em;padding:8px 12px 4px">Today</div>
+              <div class="chat-item active">
+                <div class="chat-item-title">📐 Quadratic Equations</div>
+                <div class="chat-item-meta">Mathematics · Just now</div>
+              </div>
+              <div class="chat-item">
+                <div class="chat-item-title">⚗️ Organic Chemistry</div>
+                <div class="chat-item-meta">Chemistry · 3 hrs ago</div>
+              </div>
+              <div style="font-size:.7rem;font-weight:700;color:var(--text4);text-transform:uppercase;letter-spacing:.08em;padding:8px 12px 4px">Yesterday</div>
+              <div class="chat-item">
+                <div class="chat-item-title">📝 Essay on WW2</div>
+                <div class="chat-item-meta">History · Yesterday</div>
+              </div>
+              <div class="chat-item">
+                <div class="chat-item-title">🌍 Geography – Ecosystems</div>
+                <div class="chat-item-meta">Geography · Yesterday</div>
+              </div>
+              <div class="chat-item">
+                <div class="chat-item-title">💰 Supply & Demand</div>
+                <div class="chat-item-meta">Economics · 2 days ago</div>
+              </div>
+            </div>
+          </div>
+          <div class="chat-main">
+            <div style="padding:12px 24px;border-bottom:1px solid var(--card-border);display:flex;align-items:center;justify-content:space-between;background:var(--card)">
+              <div class="flex items-center gap-3">
+                <span style="font-weight:700">📐 Quadratic Equations</span>
+                <span class="badge badge-primary">Mathematics</span>
+              </div>
+              <div class="flex gap-2">
+                <button class="btn btn-secondary btn-sm" onclick="showToast('Conversation saved!','✅')">Save</button>
+                <button class="btn btn-secondary btn-sm" onclick="showToast('Exported to PDF!','📄')">Export</button>
+              </div>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+              <!-- Subject chips -->
+              <div class="subject-chips">
+                <div class="chip active">All Subjects</div>
+                <div class="chip">📐 Maths</div>
+                <div class="chip">⚗️ Chemistry</div>
+                <div class="chip">📝 English</div>
+                <div class="chip">🔬 Biology</div>
+                <div class="chip">⚡ Physics</div>
+              </div>
+
+              <div class="msg ai fade-in">
+                <div class="msg-avatar ai">AI</div>
+                <div>
+                  <div class="msg-bubble">
+                    👋 Hi Alex! I'm your AI study assistant. I can help you with homework, explain concepts, mark essays, generate practice questions, and much more.<br/><br/>
+                    What would you like to study today? You can also <strong>upload a photo or file</strong> and I'll analyse it for you.
+                  </div>
+                  <div class="msg-actions">
+                    <div class="msg-action-btn" onclick="showToast('Copied!','✅')">📋 Copy</div>
+                    <div class="msg-action-btn" onclick="showToast('Regenerating...','🔄')">🔄 Regenerate</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="msg user fade-in">
+                <div class="msg-avatar user">A</div>
+                <div>
+                  <div class="msg-bubble">Can you explain how to solve quadratic equations by factoring? I'm in Year 11.</div>
+                </div>
+              </div>
+
+              <div class="msg ai fade-in">
+                <div class="msg-avatar ai">AI</div>
+                <div>
+                  <div class="msg-bubble">
+                    Great question! Let's work through <strong>factoring quadratic equations</strong> step by step. 🎯<br/><br/>
+                    A quadratic equation has the form: <code>ax² + bx + c = 0</code><br/><br/>
+                    <div class="step"><strong style="color:var(--primary)">Step 1:</strong> Identify a, b, and c<br/>For <code>x² + 5x + 6 = 0</code> → a=1, b=5, c=6</div>
+                    <div class="step"><strong style="color:var(--primary)">Step 2:</strong> Find two numbers that multiply to <strong>c</strong> (6) and add to <strong>b</strong> (5)<br/>→ 2 × 3 = 6 ✓ and 2 + 3 = 5 ✓</div>
+                    <div class="step"><strong style="color:var(--primary)">Step 3:</strong> Write as factored form<br/><code>(x + 2)(x + 3) = 0</code></div>
+                    <div class="step"><strong style="color:var(--primary)">Step 4:</strong> Apply zero product property<br/>x + 2 = 0 → <strong>x = −2</strong><br/>x + 3 = 0 → <strong>x = −3</strong></div>
+                    <br/>Want to try a practice problem to test your understanding? 💪
+                  </div>
+                  <div class="msg-actions">
+                    <div class="msg-action-btn" onclick="showToast('Copied!','✅')">📋 Copy</div>
+                    <div class="msg-action-btn" onclick="showToast('Regenerating...','🔄')">🔄 Regenerate</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-input-area">
+              <div class="chat-input-box">
+                <div class="chat-input-top">
+                  <textarea class="chat-textarea" id="chat-input" placeholder="Ask anything, upload a file, or describe your question..." rows="1"
+                    onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage()}"></textarea>
+                  <button class="chat-send-btn" onclick="sendMessage()">➤</button>
+                </div>
+                <div class="chat-input-bottom">
+                  <div class="chat-attach-btns">
+                    <div class="attach-btn">📷 Photo</div>
+                    <div class="attach-btn">📄 PDF</div>
+                    <div class="attach-btn">📝 Word</div>
+                  </div>
+                  <div class="chat-hint">⬆ Enter to send · Shift+Enter for new line</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── HOMEWORK PANEL ─── -->
+      <div class="panel" id="panel-homework">
+        <div class="dash-home">
+          <h2 class="font-bold text-2xl">📚 Homework Helper</h2>
+          <p class="text-muted">Upload your homework sheet and I'll guide you through each question with hints and step-by-step explanations.</p>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px">
+            <div>
+              <div class="card p-6" style="border:2px dashed var(--card-border);text-align:center;cursor:pointer;transition:var(--transition)" onmouseenter="this.style.borderColor='var(--primary)'" onmouseleave="this.style.borderColor='var(--card-border)'" onclick="showToast('File uploaded!','📄')">
+                <div style="font-size:3rem;margin-bottom:12px">📷</div>
+                <h3 class="font-bold mb-2">Upload Photo</h3>
+                <p class="text-muted text-sm">Take a photo of your worksheet</p>
+                <button class="btn btn-primary btn-sm mt-4">Choose File</button>
+              </div>
+            </div>
+            <div>
+              <div class="card p-6" style="border:2px dashed var(--card-border);text-align:center;cursor:pointer;transition:var(--transition)" onmouseenter="this.style.borderColor='var(--primary)'" onmouseleave="this.style.borderColor='var(--card-border)'" onclick="showToast('File uploaded!','📄')">
+                <div style="font-size:3rem;margin-bottom:12px">📄</div>
+                <h3 class="font-bold mb-2">Upload PDF/Word</h3>
+                <p class="text-muted text-sm">PDF, DOCX, or any document</p>
+                <button class="btn btn-primary btn-sm mt-4">Choose File</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card p-6" style="max-width:900px">
+            <h3 class="font-bold mb-4">Subject Detection</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span class="chip active">📐 Mathematics</span>
+              <span class="chip">📝 English</span>
+              <span class="chip">⚗️ Chemistry</span>
+              <span class="chip">⚡ Physics</span>
+              <span class="chip">🔬 Biology</span>
+              <span class="chip">💰 Accounting</span>
+              <span class="chip">🌍 History</span>
+              <span class="chip">🗺️ Geography</span>
+              <span class="chip">📈 Economics</span>
+            </div>
+          </div>
+
+          <div class="card p-6" style="max-width:900px">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+              <h3 class="font-bold">Sample: Worksheet Analysis</h3>
+              <span class="badge badge-success">✓ Subject Detected: Mathematics</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div class="card p-4" style="border-left:3px solid var(--primary)">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+                  <strong style="font-size:.875rem">Question 1:</strong>
+                  <span class="badge badge-warning">Hint Available</span>
+                </div>
+                <p style="font-size:.875rem;margin-bottom:8px">Solve: 2x² − 8x + 6 = 0</p>
+                <div style="background:var(--primary-50);border-radius:var(--radius-sm);padding:10px;font-size:.8125rem;color:var(--primary-dark)">
+                  💡 <strong>Hint:</strong> First, can you divide all terms by 2? What does that give you? Then try factoring the simplified equation.
+                </div>
+              </div>
+              <div class="card p-4" style="border-left:3px solid var(--warning)">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+                  <strong style="font-size:.875rem">Question 2:</strong>
+                  <span class="badge badge-primary">Step-by-step</span>
+                </div>
+                <p style="font-size:.875rem">Graph the parabola y = x² + 2x − 3 and identify the x-intercepts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── ESSAY MARKER PANEL ─── -->
+      <div class="panel" id="panel-essay">
+        <div class="essay-layout">
+          <div class="essay-panel">
+            <h3 class="font-bold">Essay Input</h3>
+            <div class="essay-toolbar">
+              <button class="btn btn-secondary btn-sm" onclick="showToast('File uploaded!','📄')">📄 Upload DOCX</button>
+              <button class="btn btn-secondary btn-sm" onclick="showToast('File uploaded!','📄')">📋 Upload PDF</button>
+              <button class="btn btn-secondary btn-sm" onclick="showToast('Rubric uploaded!','📐')">📐 Upload Rubric</button>
+            </div>
+            <div>
+              <label class="label">Essay Text</label>
+              <textarea class="input textarea" style="min-height:280px;font-size:.875rem;line-height:1.8" placeholder="Paste your essay here...">Climate change represents one of the most significant challenges facing humanity in the 21st century. The scientific consensus is clear: human activities, particularly the burning of fossil fuels, are driving unprecedented changes in our global climate system.
+
+The consequences of inaction are severe. Rising sea levels threaten coastal communities worldwide, while extreme weather events are becoming more frequent and intense. Additionally, biodiversity loss accelerates as ecosystems struggle to adapt to rapidly shifting conditions.
+
+Governments, corporations, and individuals all share responsibility for addressing this crisis. Policy solutions such as carbon pricing, renewable energy subsidies, and international cooperation through agreements like the Paris Accord provide pathways to sustainable futures.
+
+In conclusion, while the challenge is immense, the tools and knowledge to address climate change exist. What is needed is the collective will to implement meaningful change before irreversible tipping points are reached.</textarea>
+            </div>
+            <div>
+              <label class="label">Year Level / Subject</label>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                <select class="select">
+                  <option>Year 11</option><option>Year 12</option><option>University</option>
+                </select>
+                <select class="select">
+                  <option>English</option><option>History</option><option>Geography</option><option>Economics</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn btn-primary" onclick="showToast('Essay analysis complete!','✅')">✨ Analyse Essay</button>
+          </div>
+
+          <div class="essay-panel">
+            <h3 class="font-bold">AI Feedback Report</h3>
+
+            <!-- Score -->
+            <div class="flex items-center gap-4">
+              <div class="score-circle">
+                <div class="score-val">78</div>
+                <div class="score-lbl">/ 100</div>
+              </div>
+              <div>
+                <div style="font-size:1.25rem;font-weight:800">B+ / Good</div>
+                <div style="font-size:.875rem;color:var(--text3)">Estimated Grade</div>
+                <div class="flex gap-2 mt-2">
+                  <span class="badge badge-success">Strong Argument</span>
+                  <span class="badge badge-warning">Needs Evidence</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Criteria -->
+            <div>
+              <div class="font-bold mb-3">Marking Criteria</div>
+              <div class="criteria-list">
+                <div class="criteria-item">
+                  <span style="width:140px;font-size:.8125rem">Argument Quality</span>
+                  <div class="criteria-bar"><div class="criteria-fill" style="width:85%"></div></div>
+                  <span class="font-bold" style="width:40px;text-align:right;font-size:.875rem">85%</span>
+                </div>
+                <div class="criteria-item">
+                  <span style="width:140px;font-size:.8125rem">Evidence & Sources</span>
+                  <div class="criteria-bar"><div class="criteria-fill" style="width:60%"></div></div>
+                  <span class="font-bold" style="width:40px;text-align:right;font-size:.875rem">60%</span>
+                </div>
+                <div class="criteria-item">
+                  <span style="width:140px;font-size:.8125rem">Structure & Flow</span>
+                  <div class="criteria-bar"><div class="criteria-fill" style="width:80%"></div></div>
+                  <span class="font-bold" style="width:40px;text-align:right;font-size:.875rem">80%</span>
+                </div>
+                <div class="criteria-item">
+                  <span style="width:140px;font-size:.8125rem">Vocabulary</span>
+                  <div class="criteria-bar"><div class="criteria-fill" style="width:75%"></div></div>
+                  <span class="font-bold" style="width:40px;text-align:right;font-size:.875rem">75%</span>
+                </div>
+                <div class="criteria-item">
+                  <span style="width:140px;font-size:.8125rem">Grammar</span>
+                  <div class="criteria-bar"><div class="criteria-fill" style="width:90%"></div></div>
+                  <span class="font-bold" style="width:40px;text-align:right;font-size:.875rem">90%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div>
+              <div class="font-bold mb-2">Strengths</div>
+              <div>
+                <span class="feedback-tag tag-strength">✓ Clear thesis</span>
+                <span class="feedback-tag tag-strength">✓ Logical structure</span>
+                <span class="feedback-tag tag-strength">✓ Strong conclusion</span>
+                <span class="feedback-tag tag-strength">✓ Good grammar</span>
+              </div>
+            </div>
+            <div>
+              <div class="font-bold mb-2">Areas to Improve</div>
+              <div>
+                <span class="feedback-tag tag-improve">✗ Needs specific statistics</span>
+                <span class="feedback-tag tag-improve">✗ Add scholarly citations</span>
+                <span class="feedback-tag tag-improve">✗ Counterargument missing</span>
+              </div>
+            </div>
+            <div>
+              <div class="font-bold mb-2">Vocabulary Suggestions</div>
+              <div>
+                <span class="feedback-tag tag-suggestion">💡 "significant" → "profound"</span>
+                <span class="feedback-tag tag-suggestion">💡 Add transitional phrases</span>
+                <span class="feedback-tag tag-suggestion">💡 Vary sentence length</span>
+              </div>
+            </div>
+
+            <div class="card p-4" style="background:var(--bg2)">
+              <div class="font-bold text-sm mb-2">🤖 AI Feedback Summary</div>
+              <p style="font-size:.8125rem;color:var(--text2);line-height:1.7">This is a well-structured essay with a clear, arguable thesis. The argument flows logically from introduction to conclusion. However, the essay would benefit significantly from the inclusion of specific data, statistics, and peer-reviewed sources to support claims. Consider adding a paragraph that acknowledges and refutes a counterargument to strengthen the overall persuasiveness.</p>
+            </div>
+
+            <div class="flex gap-2">
+              <button class="btn btn-primary btn-sm" onclick="showToast('Exported to PDF!','📄')">📄 Export Report</button>
+              <button class="btn btn-secondary btn-sm" onclick="showToast('Saved!','✅')">💾 Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── FLASHCARDS PANEL ─── -->
+      <div class="panel" id="panel-flashcards">
+        <div style="display:flex;flex:1;flex-direction:column;overflow:hidden">
+          <div style="padding:16px 24px;border-bottom:1px solid var(--card-border);background:var(--card);display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+            <button class="btn btn-primary btn-sm" id="study-btn" onclick="startStudy()">🎯 Study Mode</button>
+            <button class="btn btn-secondary btn-sm" onclick="showToast('Shuffled!','🔀')">🔀 Shuffle</button>
+            <button class="btn btn-secondary btn-sm" onclick="showPanel('flashcards')">📚 All Decks</button>
+            <button class="btn btn-secondary btn-sm" onclick="showToast('Import started','📄')">📄 Import Notes</button>
+            <button class="btn btn-primary btn-sm ml-auto" onclick="showToast('New deck created!','✅')">+ New Deck</button>
+          </div>
+
+          <!-- Study View -->
+          <div id="study-view" class="hidden flashcard-study">
+            <div class="flashcard-counter">Card <span id="card-num">1</span> of 6</div>
+            <div class="progress-bar"><div class="progress-fill" id="card-progress" style="width:16%"></div></div>
+            <div class="flashcard" id="flashcard" onclick="flipCard()">
+              <div class="flashcard-inner">
+                <div class="flashcard-face">
+                  <div style="font-size:.75rem;font-weight:700;color:var(--text4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px">Click to reveal answer</div>
+                  <div class="flashcard-q" id="card-question">What is the process by which plants convert sunlight into glucose?</div>
+                  <div style="margin-top:20px;font-size:.8125rem;color:var(--text4)">👆 Tap to flip</div>
+                </div>
+                <div class="flashcard-face flashcard-back">
+                  <div style="font-size:.75rem;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px">Answer</div>
+                  <div class="flashcard-a" id="card-answer"><strong style="font-size:1.1rem;color:var(--primary)">Photosynthesis</strong><br/><br/>6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + 6O₂<br/><br/>Occurs in chloroplasts using chlorophyll to absorb light energy.</div>
+                </div>
+              </div>
+            </div>
+            <div class="confidence-btns" id="conf-btns" style="display:none">
+              <button class="conf-btn conf-hard" onclick="nextCard('hard')">😓 Hard</button>
+              <button class="conf-btn conf-medium" onclick="nextCard('medium')">🤔 Medium</button>
+              <button class="conf-btn conf-easy" onclick="nextCard('easy')">😊 Easy</button>
+            </div>
+            <button class="btn btn-ghost btn-sm" onclick="exitStudy()">← Back to Decks</button>
+          </div>
+
+          <!-- Deck View -->
+          <div id="deck-view" class="flashcard-deck">
+            <div class="deck-card" onclick="startStudy()">
+              <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:10px">
+                <span style="font-size:1.5rem">🔬</span>
+                <span class="badge badge-warning">18 due</span>
+              </div>
+              <h4>Biology – Cell Division</h4>
+              <p>Mitosis, meiosis, cell cycle stages and regulation</p>
+              <div class="deck-card-footer">
+                <span>24 cards</span>
+                <span>75% mastered</span>
+              </div>
+              <div style="height:4px;background:var(--bg3);border-radius:99px;margin-top:8px;overflow:hidden">
+                <div style="width:75%;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:99px"></div>
+              </div>
+            </div>
+            <div class="deck-card" onclick="startStudy()">
+              <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:10px">
+                <span style="font-size:1.5rem">⚗️</span>
+                <span class="badge badge-warning">7 due</span>
+              </div>
+              <h4>Chemistry – Periodic Table</h4>
+              <p>Elements, groups, periods, and properties</p>
+              <div class="deck-card-footer">
+                <span>40 cards</span>
+                <span>60% mastered</span>
+              </div>
+              <div style="height:4px;background:var(--bg3);border-radius:99px;margin-top:8px;overflow:hidden">
+                <div style="width:60%;height:100%;background:linear-gradient(90deg,#f59e0b,#ef4444);border-radius:99px"></div>
+              </div>
+            </div>
+            <div class="deck-card" onclick="startStudy()">
+              <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:10px">
+                <span style="font-size:1.5rem">📐</span>
+                <span class="badge badge-success">All done!</span>
+              </div>
+              <h4>Maths – Calculus Basics</h4>
+              <p>Derivatives, integrals, chain rule and applications</p>
+              <div class="deck-card-footer">
+                <span>32 cards</span>
+                <span>92% mastered</span>
+              </div>
+              <div style="height:4px;background:var(--bg3);border-radius:99px;margin-top:8px;overflow:hidden">
+                <div style="width:92%;height:100%;background:linear-gradient(90deg,var(--success),#06b6d4);border-radius:99px"></div>
+              </div>
+            </div>
+            <div class="deck-card" onclick="startStudy()">
+              <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:10px">
+                <span style="font-size:1.5rem">📝</span>
+                <span class="badge badge-primary">3 due</span>
+              </div>
+              <h4>English – Literary Devices</h4>
+              <p>Metaphor, simile, allegory, symbolism and more</p>
+              <div class="deck-card-footer">
+                <span>28 cards</span>
+                <span>85% mastered</span>
+              </div>
+              <div style="height:4px;background:var(--bg3);border-radius:99px;margin-top:8px;overflow:hidden">
+                <div style="width:85%;height:100%;background:linear-gradient(90deg,var(--accent),#ec4899);border-radius:99px"></div>
+              </div>
+            </div>
+            <div class="deck-card" style="border:2px dashed var(--card-border);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;background:transparent" onclick="showToast('AI generating flashcards from your notes...','🤖')">
+              <div style="font-size:2rem;margin-bottom:8px">✨</div>
+              <h4>Generate from Notes</h4>
+              <p style="text-align:center">Upload notes or paste text for AI to create cards automatically</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── EXAM PANEL ─── -->
+      <div class="panel" id="panel-exam">
+        <div id="exam-setup-view" class="exam-setup">
+          <h2 class="font-bold text-2xl">📋 Practice Exam Generator</h2>
+          <p class="text-muted">Configure your exam and StudyFlow will generate a complete practice paper with answer key and marking guide.</p>
+
+          <div class="exam-field-row">
+            <div>
+              <label class="label">Subject</label>
+              <select class="select"><option>Mathematics</option><option>Chemistry</option><option>Physics</option><option>Biology</option><option>English</option><option>History</option><option>Economics</option></select>
+            </div>
+            <div>
+              <label class="label">Year Level</label>
+              <select class="select"><option>Year 9</option><option>Year 10</option><option selected>Year 11</option><option>Year 12</option><option>University</option></select>
+            </div>
+          </div>
+          <div class="exam-field-row">
+            <div>
+              <label class="label">Difficulty</label>
+              <select class="select"><option>Easy</option><option selected>Medium</option><option>Hard</option><option>Mixed</option></select>
+            </div>
+            <div>
+              <label class="label">Number of Questions</label>
+              <select class="select"><option>5</option><option selected>10</option><option>15</option><option>20</option><option>30</option></select>
+            </div>
+          </div>
+
+          <div>
+            <label class="label">Question Types</label>
+            <div class="qtype-grid">
+              <div class="qtype-card selected" onclick="this.classList.toggle('selected')">
+                <span>☑️</span>
+                <p>Multiple Choice</p>
+              </div>
+              <div class="qtype-card selected" onclick="this.classList.toggle('selected')">
+                <span>✏️</span>
+                <p>Short Answer</p>
+              </div>
+              <div class="qtype-card" onclick="this.classList.toggle('selected')">
+                <span>📝</span>
+                <p>Extended Response</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label class="label">Topic Focus (optional)</label>
+            <input class="input" type="text" placeholder="e.g. Quadratic equations, trigonometry, statistics..."/>
+          </div>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <label style="display:flex;align-items:center;gap:8px;font-size:.875rem;cursor:pointer">
+              <input type="checkbox" checked/> ⏱️ Include timer mode
+            </label>
+            <label style="display:flex;align-items:center;gap:8px;font-size:.875rem;cursor:pointer">
+              <input type="checkbox" checked/> 📄 Generate answer key
+            </label>
+            <label style="display:flex;align-items:center;gap:8px;font-size:.875rem;cursor:pointer">
+              <input type="checkbox"/> 🖨️ Printable PDF
+            </label>
+          </div>
+
+          <button class="btn btn-primary btn-lg" onclick="generateExam()">⚡ Generate Exam</button>
+        </div>
+
+        <div id="exam-questions-view" class="hidden" style="display:none;flex:1;flex-direction:column;overflow:hidden">
+          <div style="padding:14px 24px;background:var(--card);border-bottom:1px solid var(--card-border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
+            <div>
+              <div class="font-bold">📋 Mathematics Practice Exam — Year 11</div>
+              <div style="font-size:.8125rem;color:var(--text3)">10 questions · Medium difficulty</div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="exam-timer">⏱️ 35:00</div>
+              <button class="btn btn-secondary btn-sm" onclick="showToast('Exam saved!','✅')">💾 Save</button>
+              <button class="btn btn-secondary btn-sm" onclick="showToast('Exporting PDF...','📄')">🖨️ Print PDF</button>
+              <button class="btn btn-ghost btn-sm" onclick="document.getElementById('exam-setup-view').style.display='flex';document.getElementById('exam-questions-view').style.display='none'">← Back</button>
+            </div>
+          </div>
+          <div class="exam-questions">
+            <div class="question-card">
+              <div class="question-num">Question 1 · Multiple Choice · 2 marks</div>
+              <div class="question-text">Solve for x: x² − 7x + 12 = 0. Which of the following gives all solutions?</div>
+              <div class="mc-options">
+                <div class="mc-option" onclick="selectOption(this,'A')"><div class="option-letter">A</div> x = 3 and x = 4</div>
+                <div class="mc-option" onclick="selectOption(this,'B')"><div class="option-letter">B</div> x = −3 and x = −4</div>
+                <div class="mc-option" onclick="selectOption(this,'C')"><div class="option-letter">C</div> x = 3 and x = −4</div>
+                <div class="mc-option" onclick="selectOption(this,'D')"><div class="option-letter">D</div> x = −3 and x = 4</div>
+              </div>
+            </div>
+            <div class="question-card">
+              <div class="question-num">Question 2 · Multiple Choice · 2 marks</div>
+              <div class="question-text">What is the vertex of the parabola y = (x − 3)² + 5?</div>
+              <div class="mc-options">
+                <div class="mc-option" onclick="selectOption(this,'A')"><div class="option-letter">A</div> (3, 5)</div>
+                <div class="mc-option" onclick="selectOption(this,'B')"><div class="option-letter">B</div> (−3, 5)</div>
+                <div class="mc-option" onclick="selectOption(this,'C')"><div class="option-letter">C</div> (3, −5)</div>
+                <div class="mc-option" onclick="selectOption(this,'D')"><div class="option-letter">D</div> (5, 3)</div>
+              </div>
+            </div>
+            <div class="question-card">
+              <div class="question-num">Question 3 · Short Answer · 4 marks</div>
+              <div class="question-text">A ball is thrown upward with initial velocity 20 m/s. Its height is given by h(t) = 20t − 5t². Find the maximum height and the time it occurs.</div>
+              <textarea class="input sa-input mt-3" placeholder="Write your answer here..."></textarea>
+            </div>
+            <div style="display:flex;justify-content:center;gap:12px;padding-bottom:32px">
+              <button class="btn btn-secondary" onclick="document.getElementById('exam-setup-view').style.display='flex';document.getElementById('exam-questions-view').style.display='none'">← Back to Setup</button>
+              <button class="btn btn-primary" onclick="showToast('Answers submitted! Marking...','🎯')">Submit Exam →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── FILES PANEL ─── -->
+      <div class="panel" id="panel-files">
+        <div class="dash-home">
+          <div class="flex justify-between items-center">
+            <h2 class="font-bold text-2xl">📁 File Library</h2>
+            <button class="btn btn-primary" onclick="showToast('Ready to upload!','📁')">+ Upload Files</button>
+          </div>
+
+          <div class="flex gap-3 flex-wrap">
+            <div class="input" style="width:auto;flex:1;max-width:400px;display:flex;align-items:center;gap:8px">
+              <span>🔍</span>
+              <input style="background:none;flex:1;color:var(--text);font-size:.875rem" placeholder="Search files..."/>
+            </div>
+            <select class="select" style="width:auto">
+              <option>All Files</option><option>PDF</option><option>Word</option><option>Images</option><option>PowerPoint</option>
+            </select>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px">
+            <div class="card p-4 card-hover cursor-pointer">
+              <div style="font-size:2.5rem;margin-bottom:12px">📄</div>
+              <div class="font-semibold text-sm truncate">Biology_Textbook_Ch7.pdf</div>
+              <div class="text-muted" style="font-size:.75rem;margin-top:4px">PDF · 4.2 MB · Oct 12</div>
+              <div class="flex gap-2 mt-3">
+                <button class="btn btn-ghost btn-xs" onclick="showPanel('chat')">💬 Ask AI</button>
+                <button class="btn btn-ghost btn-xs" onclick="showToast('Creating flashcards...','🃏')">🃏 Flashcards</button>
+              </div>
+            </div>
+            <div class="card p-4 card-hover cursor-pointer">
+              <div style="font-size:2.5rem;margin-bottom:12px">📝</div>
+              <div class="font-semibold text-sm truncate">Climate_Essay_Draft2.docx</div>
+              <div class="text-muted" style="font-size:.75rem;margin-top:4px">Word · 128 KB · Oct 10</div>
+              <div class="flex gap-2 mt-3">
+                <button class="btn btn-ghost btn-xs" onclick="showPanel('essay')">✍️ Mark</button>
+                <button class="btn btn-ghost btn-xs" onclick="showPanel('chat')">💬 Ask AI</button>
+              </div>
+            </div>
+            <div class="card p-4 card-hover cursor-pointer">
+              <div style="font-size:2.5rem;margin-bottom:12px">📸</div>
+              <div class="font-semibold text-sm truncate">Homework_Sheet_Oct11.jpg</div>
+              <div class="text-muted" style="font-size:.75rem;margin-top:4px">Image · 2.1 MB · Oct 11</div>
+              <div class="flex gap-2 mt-3">
+                <button class="btn btn-ghost btn-xs" onclick="showPanel('homework')">📚 Help</button>
+                <button class="btn btn-ghost btn-xs" onclick="showPanel('chat')">💬 Ask AI</button>
+              </div>
+            </div>
+            <div class="card p-4 card-hover cursor-pointer">
+              <div style="font-size:2.5rem;margin-bottom:12px">📊</div>
+              <div class="font-semibold text-sm truncate">Chemistry_Notes_Q3.pptx</div>
+              <div class="text-muted" style="font-size:.75rem;margin-top:4px">PowerPoint · 8.7 MB · Oct 8</div>
+              <div class="flex gap-2 mt-3">
+                <button class="btn btn-ghost btn-xs" onclick="showToast('Generating flashcards...','🃏')">🃏 Flashcards</button>
+                <button class="btn btn-ghost btn-xs" onclick="showPanel('chat')">💬 Ask AI</button>
+              </div>
+            </div>
+            <div class="card p-4" style="border:2px dashed var(--card-border);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;background:transparent;min-height:140px" onclick="showToast('Ready to upload!','📁')">
+              <div style="font-size:2rem;margin-bottom:8px">➕</div>
+              <p style="font-size:.8125rem;color:var(--text3);text-align:center">Upload PDF, DOCX, PPTX, or image</p>
+            </div>
+          </div>
+
+          <!-- Upgrade prompt -->
+          <div class="upgrade-banner">
+            <div>
+              <div class="font-bold text-lg">🔒 Free plan: 3/3 uploads used</div>
+              <p style="font-size:.875rem;opacity:.85;margin-top:4px">Upgrade to Premium for unlimited file uploads and AI analysis</p>
+            </div>
+            <button class="upgrade-btn" onclick="window.open('https://buy.stripe.com/test_00w00lbfX2EbbyBbYS5AQ00','_blank')">⚡ Upgrade Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── ANALYTICS PANEL ─── -->
+      <div class="panel" id="panel-analytics">
+        <div class="analytics-dash">
+          <h2 class="font-bold text-2xl">📊 Study Analytics</h2>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">🔥</div>
+              <div class="stat-value">12</div>
+              <div class="stat-label">Day Streak</div>
+              <div class="mini-chart mt-2">
+                <div class="chart-bars">
+                  <div class="chart-bar" style="height:40%"></div>
+                  <div class="chart-bar" style="height:60%"></div>
+                  <div class="chart-bar" style="height:45%"></div>
+                  <div class="chart-bar" style="height:80%"></div>
+                  <div class="chart-bar" style="height:70%"></div>
+                  <div class="chart-bar" style="height:90%"></div>
+                  <div class="chart-bar" style="height:100%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">⏱️</div>
+              <div class="stat-value">47h</div>
+              <div class="stat-label">Total Study Time</div>
+              <div class="mini-chart mt-2">
+                <div class="chart-bars">
+                  <div class="chart-bar" style="height:50%;background:linear-gradient(180deg,var(--accent-light),var(--accent))"></div>
+                  <div class="chart-bar" style="height:70%;background:linear-gradient(180deg,var(--accent-light),var(--accent))"></div>
+                  <div class="chart-bar" style="height:60%;background:linear-gradient(180deg,var(--accent-light),var(--accent))"></div>
+                  <div class="chart-bar" style="height:85%;background:linear-gradient(180deg,var(--accent-light),var(--accent))"></div>
+                  <div class="chart-bar" style="height:75%;background:linear-gradient(180deg,var(--accent-light),var(--accent))"></div>
+                  <div class="chart-bar" style="height:95%;background:linear-gradient(180deg,var(--accent-light),var(--accent))"></div>
+                  <div class="chart-bar" style="height:80%;background:linear-gradient(180deg,var(--accent-light),var(--accent))"></div>
+                </div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🎯</div>
+              <div class="stat-value">87%</div>
+              <div class="stat-label">Quiz Accuracy</div>
+              <div class="mini-chart mt-2">
+                <div class="chart-bars">
+                  <div class="chart-bar" style="height:70%;background:linear-gradient(180deg,#34d399,#10b981)"></div>
+                  <div class="chart-bar" style="height:75%;background:linear-gradient(180deg,#34d399,#10b981)"></div>
+                  <div class="chart-bar" style="height:80%;background:linear-gradient(180deg,#34d399,#10b981)"></div>
+                  <div class="chart-bar" style="height:78%;background:linear-gradient(180deg,#34d399,#10b981)"></div>
+                  <div class="chart-bar" style="height:83%;background:linear-gradient(180deg,#34d399,#10b981)"></div>
+                  <div class="chart-bar" style="height:85%;background:linear-gradient(180deg,#34d399,#10b981)"></div>
+                  <div class="chart-bar" style="height:87%;background:linear-gradient(180deg,#34d399,#10b981)"></div>
+                </div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🃏</div>
+              <div class="stat-value">284</div>
+              <div class="stat-label">Cards Mastered</div>
+              <div class="mini-chart mt-2">
+                <div class="chart-bars">
+                  <div class="chart-bar" style="height:30%;background:linear-gradient(180deg,#fbbf24,#f59e0b)"></div>
+                  <div class="chart-bar" style="height:45%;background:linear-gradient(180deg,#fbbf24,#f59e0b)"></div>
+                  <div class="chart-bar" style="height:55%;background:linear-gradient(180deg,#fbbf24,#f59e0b)"></div>
+                  <div class="chart-bar" style="height:65%;background:linear-gradient(180deg,#fbbf24,#f59e0b)"></div>
+                  <div class="chart-bar" style="height:75%;background:linear-gradient(180deg,#fbbf24,#f59e0b)"></div>
+                  <div class="chart-bar" style="height:85%;background:linear-gradient(180deg,#fbbf24,#f59e0b)"></div>
+                  <div class="chart-bar" style="height:90%;background:linear-gradient(180deg,#fbbf24,#f59e0b)"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+            <!-- Weekly Chart -->
+            <div class="card p-6">
+              <div class="font-bold mb-4">📅 Weekly Study Hours</div>
+              <div style="height:140px;display:flex;align-items:flex-end;gap:8px">
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
+                  <span style="font-size:.7rem;color:var(--text4)">1.5h</span>
+                  <div style="width:100%;background:linear-gradient(180deg,var(--primary-light),var(--primary));border-radius:6px 6px 0 0;height:30%"></div>
+                  <span style="font-size:.72rem;color:var(--text4)">Mon</span>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
+                  <span style="font-size:.7rem;color:var(--text4)">2.5h</span>
+                  <div style="width:100%;background:linear-gradient(180deg,var(--primary-light),var(--primary));border-radius:6px 6px 0 0;height:50%"></div>
+                  <span style="font-size:.72rem;color:var(--text4)">Tue</span>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
+                  <span style="font-size:.7rem;color:var(--text4)">3.5h</span>
+                  <div style="width:100%;background:linear-gradient(180deg,var(--primary-light),var(--primary));border-radius:6px 6px 0 0;height:70%"></div>
+                  <span style="font-size:.72rem;color:var(--text4)">Wed</span>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
+                  <span style="font-size:.7rem;color:var(--text4)">2h</span>
+                  <div style="width:100%;background:linear-gradient(180deg,var(--primary-light),var(--primary));border-radius:6px 6px 0 0;height:40%"></div>
+                  <span style="font-size:.72rem;color:var(--text4)">Thu</span>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
+                  <span style="font-size:.7rem;color:var(--text4)">4.5h</span>
+                  <div style="width:100%;background:linear-gradient(180deg,var(--primary-light),var(--primary));border-radius:6px 6px 0 0;height:90%"></div>
+                  <span style="font-size:.72rem;color:var(--text4)">Fri</span>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
+                  <span style="font-size:.7rem;color:var(--text4)">5h</span>
+                  <div style="width:100%;background:linear-gradient(180deg,var(--accent-light),var(--accent));border-radius:6px 6px 0 0;height:100%"></div>
+                  <span style="font-size:.72rem;color:var(--text4)">Sat</span>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
+                  <span style="font-size:.7rem;color:var(--text4)">3h</span>
+                  <div style="width:100%;background:linear-gradient(180deg,var(--primary-light),var(--primary));border-radius:6px 6px 0 0;height:60%"></div>
+                  <span style="font-size:.72rem;color:var(--text4)">Sun</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Subjects -->
+            <div class="card p-6">
+              <div class="font-bold mb-4">📚 Subjects Studied</div>
+              <div class="flex items-center gap-4">
+                <div class="donut-wrap">
+                  <svg class="donut-svg" viewBox="0 0 42 42">
+                    <circle class="donut-track" cx="21" cy="21" r="15.91"/>
+                    <circle class="donut-fill" cx="21" cy="21" r="15.91" stroke="#2563eb" stroke-dasharray="35 65"/>
+                    <circle class="donut-fill" cx="21" cy="21" r="15.91" stroke="#7c3aed" stroke-dasharray="25 75" stroke-dashoffset="-35"/>
+                    <circle class="donut-fill" cx="21" cy="21" r="15.91" stroke="#10b981" stroke-dasharray="20 80" stroke-dashoffset="-60"/>
+                    <circle class="donut-fill" cx="21" cy="21" r="15.91" stroke="#f59e0b" stroke-dasharray="20 80" stroke-dashoffset="-80"/>
+                  </svg>
+                  <div class="donut-label"><div class="font-bold" style="font-size:.875rem">47h</div><div style="font-size:.65rem;color:var(--text3)">total</div></div>
+                </div>
+                <div class="subject-list flex-1">
+                  <div class="subject-row">
+                    <div class="subject-dot" style="background:#2563eb"></div>
+                    <span class="subject-name">Mathematics</span>
+                    <span class="subject-pct">35%</span>
+                    <div class="subject-bar-wrap"><div class="subject-bar-fill" style="width:35%;background:#2563eb"></div></div>
+                  </div>
+                  <div class="subject-row">
+                    <div class="subject-dot" style="background:#7c3aed"></div>
+                    <span class="subject-name">Chemistry</span>
+                    <span class="subject-pct">25%</span>
+                    <div class="subject-bar-wrap"><div class="subject-bar-fill" style="width:25%;background:#7c3aed"></div></div>
+                  </div>
+                  <div class="subject-row">
+                    <div class="subject-dot" style="background:#10b981"></div>
+                    <span class="subject-name">Biology</span>
+                    <span class="subject-pct">20%</span>
+                    <div class="subject-bar-wrap"><div class="subject-bar-fill" style="width:20%;background:#10b981"></div></div>
+                  </div>
+                  <div class="subject-row">
+                    <div class="subject-dot" style="background:#f59e0b"></div>
+                    <span class="subject-name">English</span>
+                    <span class="subject-pct">20%</span>
+                    <div class="subject-bar-wrap"><div class="subject-bar-fill" style="width:20%;background:#f59e0b"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Streak Calendar -->
+          <div class="card p-6">
+            <div class="font-bold mb-4">🔥 Study Streak — October 2025</div>
+            <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;max-width:500px">
+              <div style="font-size:.68rem;color:var(--text4);text-align:center">M</div>
+              <div style="font-size:.68rem;color:var(--text4);text-align:center">T</div>
+              <div style="font-size:.68rem;color:var(--text4);text-align:center">W</div>
+              <div style="font-size:.68rem;color:var(--text4);text-align:center">T</div>
+              <div style="font-size:.68rem;color:var(--text4);text-align:center">F</div>
+              <div style="font-size:.68rem;color:var(--text4);text-align:center">S</div>
+              <div style="font-size:.68rem;color:var(--text4);text-align:center">S</div>
+              <script>
+                for(let i=1;i<=31;i++){
+                  const studied = [1,2,3,5,6,7,8,9,10,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26].includes(i);
+                  const today = i===27;
+                  document.write(`<div style="width:100%;aspect-ratio:1;border-radius:6px;background:${today?'var(--primary)':studied?'rgba(37,99,235,.25)':'var(--bg3)'};display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:${today?'700':'500'};color:${today?'#fff':studied?'var(--primary)':'var(--text4)'}">${i}</div>`);
+                }
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── SETTINGS PANEL ─── -->
+      <div class="panel" id="panel-settings">
+        <div class="settings-layout">
+          <h2 class="font-bold text-2xl">⚙️ Settings</h2>
+
+          <!-- Upgrade Card -->
+          <div class="upgrade-banner">
+            <div>
+              <div class="font-bold text-lg">⚡ Upgrade to Premium — $2.99 AUD one-time</div>
+              <p style="font-size:.875rem;opacity:.85;margin-top:4px">Unlimited AI messages, uploads, essay marking, flashcards and practice exams</p>
+            </div>
+            <button class="upgrade-btn" onclick="window.open('https://buy.stripe.com/test_00w00lbfX2EbbyBbYS5AQ00','_blank')">Upgrade Now</button>
+          </div>
+
+          <!-- Appearance -->
+          <div class="settings-section">
+            <div class="settings-section-title">🎨 Appearance</div>
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <h4>Dark Mode</h4>
+                <p>Switch between light and dark theme</p>
+              </div>
+              <div class="toggle" id="dark-toggle" onclick="toggleThemeToggle()"></div>
+            </div>
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <h4>Theme Colour</h4>
+                <p>Choose your accent colour</p>
+              </div>
+              <div class="color-swatches">
+                <div class="swatch active" style="background:#2563eb" onclick="setColor(this,'#2563eb','#1d4ed8','#3b82f6')"></div>
+                <div class="swatch" style="background:#7c3aed" onclick="setColor(this,'#7c3aed','#6d28d9','#8b5cf6')"></div>
+                <div class="swatch" style="background:#059669" onclick="setColor(this,'#059669','#047857','#10b981')"></div>
+                <div class="swatch" style="background:#dc2626" onclick="setColor(this,'#dc2626','#b91c1c','#ef4444')"></div>
+                <div class="swatch" style="background:#d97706" onclick="setColor(this,'#d97706','#b45309','#f59e0b')"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Study Preferences -->
+          <div class="settings-section">
+            <div class="settings-section-title">📚 Study Preferences</div>
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <h4>Year Level</h4>
+                <p>Used for calibrating AI explanations</p>
+              </div>
+              <select class="select" style="width:160px">
+                <option>Year 10</option><option selected>Year 11</option><option>Year 12</option><option>University</option>
+              </select>
+            </div>
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <h4>Primary Subjects</h4>
+                <p>Personalise your dashboard</p>
+              </div>
+              <button class="btn btn-secondary btn-sm">Edit Subjects</button>
+            </div>
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <h4>Daily Study Reminders</h4>
+                <p>Get notified to maintain your streak</p>
+              </div>
+              <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <h4>Flashcard Due Reminders</h4>
+                <p>Notify when cards are due for review</p>
+              </div>
+              <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+            </div>
+          </div>
+
+          <!-- AI Settings -->
+          <div class="settings-section">
+            <div class="settings-section-title">🤖 AI Behaviour</div>
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <h4>Hint Mode</h4>
+                <p>Show hints before full explanations</p>
+              </div>
+              <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <h4>Step-by-Step Mode</h4>
+                <p>Always show detailed steps for STEM questions</p>
+              </div>
+              <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <h4>Response Language</h4>
+                <p>Language for AI responses</p>
+              </div>
+              <select class="select" style="width:140px">
+                <option selected>English</option><option>Spanish</option><option>French</option><option>Mandarin</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Account -->
+          <div class="settings-section">
+            <div class="settings-section-title">👤 Account</div>
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <h4>Alex Johnson</h4>
+                <p>alex.johnson@email.com</p>
+              </div>
+              <button class="btn btn-secondary btn-sm">Edit Profile</button>
+            </div>
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <h4>Change Password</h4>
+                <p>Update your login password</p>
+              </div>
+              <button class="btn btn-secondary btn-sm">Change</button>
+            </div>
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <h4>Delete Account</h4>
+                <p style="color:var(--danger)">Permanently delete all your data</p>
+              </div>
+              <button class="btn btn-danger btn-sm" onclick="showToast('Action cancelled for demo','ℹ️')">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div class="toast-container" id="toast-container"></div>
+
+<script>
+// ── STATE ────────────────────────────────────────────────────
+let isDark = false;
+let currentPanel = 'home';
+let currentAuthMode = 'login';
+let cardIndex = 0;
+let cardFlipped = false;
+
+const cards = [
+  {q:'What is the process by which plants convert sunlight into glucose?', a:'Photosynthesis\n\n6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + 6O₂\n\nOccurs in chloroplasts using chlorophyll to absorb light energy.'},
+  {q:'What are the four bases in DNA?', a:'Adenine (A), Thymine (T), Guanine (G), Cytosine (C)\n\nA pairs with T, G pairs with C.'},
+  {q:'What is the powerhouse of the cell?', a:'The Mitochondria\n\nProduces ATP through cellular respiration (oxidative phosphorylation).'},
+  {q:'Define osmosis', a:'The movement of water molecules across a semi-permeable membrane from an area of high water concentration to low water concentration.'},
+  {q:'What is the difference between mitosis and meiosis?', a:'Mitosis: produces 2 identical diploid cells (for growth/repair)\nMeiosis: produces 4 genetically unique haploid cells (for sexual reproduction)'},
+  {q:'What is the cell cycle?', a:'G1 → S (DNA replication) → G2 → M (Mitosis) → Cytokinesis\n\nRegulated by cyclins and CDKs.'},
+];
+
+// ── THEME ────────────────────────────────────────────────────
+function toggleTheme() {
+  isDark = !isDark;
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  const toggle = document.getElementById('dark-toggle');
+  if (toggle) toggle.classList.toggle('on', isDark);
+}
+function toggleThemeToggle() {
+  toggleTheme();
+}
+
+// ── PAGES ────────────────────────────────────────────────────
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+// ── AUTH ─────────────────────────────────────────────────────
+function openAuth(mode) {
+  switchTab(mode);
+  document.getElementById('auth-modal').classList.add('open');
+}
+function closeAuth() {
+  document.getElementById('auth-modal').classList.remove('open');
+}
+function closeAuthOnBg(e) {
+  if (e.target === document.getElementById('auth-modal')) closeAuth();
+}
+function switchTab(mode) {
+  currentAuthMode = mode;
+  document.getElementById('tab-login').classList.toggle('active', mode==='login');
+  document.getElementById('tab-signup').classList.toggle('active', mode==='signup');
+  document.getElementById('signup-fields').classList.toggle('hidden', mode==='login');
+  document.getElementById('signup-terms').classList.toggle('hidden', mode==='login');
+  document.getElementById('auth-submit-btn').textContent = mode==='login' ? 'Sign In' : 'Create Free Account';
+  document.getElementById('auth-switch-text').textContent = mode==='login' ? "Don't have an account?" : 'Already have an account?';
+  document.getElementById('auth-switch-link').textContent = mode==='login' ? 'Sign up free →' : 'Sign in →';
+  document.getElementById('auth-switch-link').setAttribute('onclick', `switchTab('${mode==='login'?'signup':'login'}')`);
+  document.getElementById('forgot-link').style.display = mode==='login' ? '' : 'none';
+}
+function handleAuth() {
+  closeAuth();
+  showPage('app-page');
+  showToast(currentAuthMode==='login' ? 'Welcome back, Alex! 👋' : '🎉 Account created! Welcome to StudyFlow!', '✅');
+}
+function handleGoogleAuth() {
+  closeAuth();
+  showPage('app-page');
+  showToast('Signed in with Google! Welcome back 👋', '✅');
+}
+function handleLogout() {
+  showPage('landing-page');
+  showToast('Signed out successfully', '✅');
+}
+
+// ── APP PANELS ────────────────────────────────────────────────
+function showPanel(name) {
+  currentPanel = name;
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  const panel = document.getElementById('panel-' + name);
+  if (panel) { panel.classList.add('active'); panel.classList.add('fade-in'); }
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+
+  const titles = {
+    home:'🏠 Dashboard', chat:'💬 AI Chat', homework:'📚 Homework Helper',
+    essay:'✍️ Essay Marker', flashcards:'🃏 Flashcards', exam:'📋 Practice Exams',
+    files:'📁 File Library', analytics:'📊 Analytics', settings:'⚙️ Settings'
+  };
+  document.getElementById('page-title').textContent = titles[name] || name;
+
+  const navMap = {home:0,chat:1,homework:2,essay:3,flashcards:4,exam:5,files:6,analytics:7,settings:8};
+  const navItems = document.querySelectorAll('.nav-item');
+  if (navMap[name] !== undefined && navItems[navMap[name]]) navItems[navMap[name]].classList.add('active');
+
+  closeMobileSidebar();
+}
+
+// ── SIDEBAR ──────────────────────────────────────────────────
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('collapsed');
+}
+function openMobileSidebar() {
+  document.getElementById('sidebar').classList.add('mobile-open');
+  document.getElementById('mobile-overlay').classList.remove('hidden');
+}
+function closeMobileSidebar() {
+  document.getElementById('sidebar').classList.remove('mobile-open');
+  document.getElementById('mobile-overlay').classList.add('hidden');
+}
+
+// ── CHAT ─────────────────────────────────────────────────────
+const responses = [
+  "Great question! Let me break that down for you step by step... First, let's identify the key concepts involved. This is fundamental to understanding the broader topic.",
+  "I can definitely help with that! Here's a clear explanation: The core principle here involves understanding how different components interact with each other.",
+  "Excellent! This is a really important concept. Let me give you a thorough explanation with an example to make it concrete and memorable.",
+  "Sure! Before I give you the full answer, here's a hint: think about what you already know about the topic. What connections can you make? 💡",
+  "Let's work through this together systematically. The key steps are: (1) Identify what's given, (2) Determine what's needed, (3) Apply the relevant principle or formula."
+];
+let respIdx = 0;
+
+function sendMessage() {
+  const input = document.getElementById('chat-input');
+  const text = input.value.trim();
+  if (!text) return;
+  const container = document.getElementById('chat-messages');
+
+  // User message
+  const userDiv = document.createElement('div');
+  userDiv.className = 'msg user fade-in';
+  userDiv.innerHTML = `<div class="msg-avatar user">A</div><div><div class="msg-bubble">${escHtml(text)}</div></div>`;
+  container.appendChild(userDiv);
+  input.value = '';
+
+  // Typing
+  const typingDiv = document.createElement('div');
+  typingDiv.className = 'msg ai fade-in';
+  typingDiv.innerHTML = `<div class="msg-avatar ai">AI</div><div class="typing-indicator"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>`;
+  container.appendChild(typingDiv);
+  container.scrollTop = container.scrollHeight;
+
+  setTimeout(() => {
+    typingDiv.remove();
+    const aiDiv = document.createElement('div');
+    aiDiv.className = 'msg ai fade-in';
+    const resp = responses[respIdx++ % responses.length];
+    aiDiv.innerHTML = `<div class="msg-avatar ai">AI</div><div><div class="msg-bubble">${resp}</div><div class="msg-actions"><div class="msg-action-btn" onclick="showToast('Copied!','✅')">📋 Copy</div><div class="msg-action-btn" onclick="showToast('Regenerating...','🔄')">🔄 Regenerate</div></div></div>`;
+    container.appendChild(aiDiv);
+    container.scrollTop = container.scrollHeight;
+  }, 1200);
+}
+
+// ── EXAM ─────────────────────────────────────────────────────
+function generateExam() {
+  showToast('Generating your exam...', '⚡');
+  setTimeout(() => {
+    document.getElementById('exam-setup-view').style.display = 'none';
+    const qv = document.getElementById('exam-questions-view');
+    qv.style.display = 'flex';
+    qv.classList.add('fade-in');
+    showToast('Exam generated! 10 questions ready.', '✅');
+  }, 1500);
+}
+
+function selectOption(el, letter) {
+  const siblings = el.parentElement.querySelectorAll('.mc-option');
+  siblings.forEach(s => s.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+// ── FLASHCARDS ────────────────────────────────────────────────
+function startStudy() {
+  cardIndex = 0; cardFlipped = false;
+  document.getElementById('deck-view').classList.add('hidden');
+  const sv = document.getElementById('study-view');
+  sv.classList.remove('hidden');
+  sv.style.display = 'flex';
+  loadCard();
+}
+function exitStudy() {
+  document.getElementById('study-view').classList.add('hidden');
+  document.getElementById('deck-view').classList.remove('hidden');
+}
+function loadCard() {
+  const c = cards[cardIndex];
+  document.getElementById('card-question').textContent = c.q;
+  document.getElementById('card-answer').textContent = c.a;
+  document.getElementById('card-num').textContent = cardIndex + 1;
+  document.getElementById('card-progress').style.width = ((cardIndex+1)/cards.length*100)+'%';
+  document.getElementById('flashcard').classList.remove('flipped');
+  document.getElementById('conf-btns').style.display = 'none';
+  cardFlipped = false;
+}
+function flipCard() {
+  if (!cardFlipped) {
+    document.getElementById('flashcard').classList.add('flipped');
+    cardFlipped = true;
+    document.getElementById('conf-btns').style.display = 'flex';
+  }
+}
+function nextCard(confidence) {
+  const msgs = {easy:'Easy! Moving on 🚀',medium:'Got it! Review scheduled 📅',hard:'No worries! We\'ll revisit this soon 💪'};
+  showToast(msgs[confidence], confidence==='easy'?'😊':confidence==='medium'?'🤔':'😓');
+  cardIndex = (cardIndex + 1) % cards.length;
+  setTimeout(loadCard, 300);
+}
+
+// ── FAQ ──────────────────────────────────────────────────────
+function toggleFaq(el) { el.classList.toggle('open'); }
+
+// ── TOAST ─────────────────────────────────────────────────────
+function showToast(msg, icon='ℹ️') {
+  const c = document.getElementById('toast-container');
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.innerHTML = `<span class="toast-icon">${icon}</span><span>${msg}</span>`;
+  c.appendChild(t);
+  setTimeout(() => t.remove(), 3200);
+}
+
+// ── COLOR THEME ───────────────────────────────────────────────
+function setColor(el, primary, dark, light) {
+  document.documentElement.style.setProperty('--primary', primary);
+  document.documentElement.style.setProperty('--primary-dark', dark);
+  document.documentElement.style.setProperty('--primary-light', light);
+  document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+  el.classList.add('active');
+  showToast('Theme colour updated!', '🎨');
+}
+
+// ── SCROLL NAV ────────────────────────────────────────────────
+function scrollTo(sel) {
+  const el = document.querySelector(sel);
+  if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+// ── UTILITIES ─────────────────────────────────────────────────
+function escHtml(t) {
+  return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ── RESPONSIVE ───────────────────────────────────────────────
+function checkMobile() {
+  const btn = document.getElementById('mobile-menu-btn');
+  if (btn) btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+}
+window.addEventListener('resize', checkMobile);
+checkMobile();
+
+// ── INIT ─────────────────────────────────────────────────────
+document.getElementById('dark-toggle').classList.toggle('on', isDark);
+</script>
+</body>
+</html>
